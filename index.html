@@ -1,0 +1,2743 @@
+<!DOCTYPE html>
+<html>
+<head><title>Home Page</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+
+function bmrmale() {
+	var W = document.getElementById("w").value;
+	var H = document.getElementById("h").value;
+	var A = document.getElementById("a").value;
+	var x;
+	var radio = $("input[name='test']:checked").val();
+    if (W == 0 || H == 0 || A==0)
+	{
+		document.getElementById("result").innerHTML = "Please provide the required values";
+		document.getElementById("result").style.color = 'red';
+		document.getElementById("result").style.fontSize = "x-large";
+	} else if (radio == 'm'){
+	x = (10*W) + (6.25*H) - (5*A) + 5;
+	document.getElementById("result").innerHTML = (" BMR = "+"<font color='green'>" + x.toFixed(2) + "</font> " + "Calories/day, while at rest in a neutrally temperate environment. ");
+	document.getElementById("result").style.color = 'black';
+	if (window.matchMedia("(max-width: 600px)").matches) {
+  	document.getElementById("result").style.fontSize = "medium";
+  }else{
+  		document.getElementById("result").style.fontSize = "xx-large";
+  }
+
+	
+	 }else{
+	 	x = (10*W) + (6.25*H) - (5*A) - 161;
+	 	document.getElementById("result").innerHTML = (" BMR = "+"<font color='green'>" + x.toFixed(2) + "</font> " + "Calories/day, while at rest in a neutrally temperate environment.");
+	 	document.getElementById("result").style.color = 'black';
+		if (window.matchMedia("(max-width: 600px)").matches) {
+  	document.getElementById("result").style.fontSize = "medium";
+  }else{
+  		document.getElementById("result").style.fontSize = "xx-large";
+  }
+	 }
+	}
+	function foottocm() {
+		var feet = Number(document.getElementById("foot").value);
+		var Inch = Number(document.getElementById("inch").value);
+		var val = (feet * 12) + Inch;
+		var cm = (val * 2.54);
+		document.getElementById("result1").innerHTML = cm.toFixed(2)+ " cm";
+	}
+	function lbstokg() {
+		var lbs = Number(document.getElementById("lbs").value);
+		var kg = (lbs/2.2046);
+		document.getElementById("result2").innerHTML = kg.toPrecision(4) + " kg";
+	}
+	function protein() {
+		var weight = Number(document.getElementById("protein").value);
+		var min = weight * 0.8;
+		var max = weight * 1.7;
+		document.getElementById("result3").innerHTML ="<font size ='6' color='#ff3300'>Minimum:</font> " + min.toFixed(2) + " g protein/Day" + "<br><br>" +
+		"<font size ='6' color='#ff3300'>Maximum:</font> " + max.toFixed(2) + "g protein/Day";
+		}
+function myFunction() {
+  var txt;
+  var person = prompt("Please enter your name:");
+  if (person == null || person == "") {
+    txt = "Hello <font color='#ff3300'>Stranger!</font> Welcome to my website.";
+  } else {
+    txt = "Hello <font color='#ff3300'>" + person + "!</font> Welcome to my website.";
+  }
+  document.getElementById("demo").innerHTML = txt;
+  if (window.matchMedia("(max-width: 600px)").matches) {
+  	document.getElementById("demo").style.fontSize = "x-large";
+  }else{
+  		document.getElementById("demo").style.fontSize = "xx-large";
+  }
+ }
+</script>
+</head>
+<body>
+
+	<div id="nav" class="topnav">
+	<a title="Home" style="float:left; margin-left:5px;"  href="#up"><i class="fas fa-home" style="font-size:24px;"></i></a>
+	 <a class="two"  title="About" href="#about" style="margin-right:5px"><img src="https://scontent-bom1-2.xx.fbcdn.net/v/t1.0-9/28280143_812197418977177_2556270864973668299_n.jpg?_nc_cat=101&_nc_oc=AQlaq0OFejnVfYwn4xbH8MuB8bWegOIvkjrG3NsT1O_FBHHNW4_yIyzvVc8Hj-BYNGE&_nc_ht=scontent-bom1-2.xx&oh=45a0c2baaab50826c9374709acea24c5&oe=5DE59F54" alt="Person" width="20" height="20" style="border-radius:50%"></a>
+	 <a style="background-color:#4da6ff; color:#fff;" href="#extra">Extra</a>
+	<a style="background-color:#990000; color:#fff;" href="#workout">Training</a>
+	<a style="background-color:#ff9900; color:#fff;" href="#body">Know your Body</a>
+	<a style="background-color:#ff3300; color:#fff;" href="#diet">Diet</a>
+	<a style="background-color:#009900; color:#fff;" href="#intro">Intro</a>
+</div>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#intro">Intro</a>
+ <a href="#diet">Diet</a>
+	<a href="#body">Know your Body</a>
+	<a href="#workout">Training</a>
+	<a href="#extra">Extra</a>
+	
+	</div>
+	<div id="open" style="position:sticky; top:0; z-index:1; background-color:#fff; color:#111; padding:10px; 
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+	<span style="float:right;">
+		<a title="Home" href="#up">
+			<i class="fas fa-home" style="font-size:36px;"></i></a> 
+  <a style="margin-left:7px;" title="About" href="#about">
+  	<img src="https://scontent-bom1-2.xx.fbcdn.net/v/t1.0-9/28280143_812197418977177_2556270864973668299_n.jpg?_nc_cat=101&_nc_oc=AQlaq0OFejnVfYwn4xbH8MuB8bWegOIvkjrG3NsT1O_FBHHNW4_yIyzvVc8Hj-BYNGE&_nc_ht=scontent-bom1-2.xx&oh=45a0c2baaab50826c9374709acea24c5&oe=5DE59F54" alt="Person" width="36" height="36" style="border-radius:50%"></a>
+  
+</span>
+<span   style=" font-size:30px;cursor:pointer; " onclick="openNav()">&#9776; Menu</span></div>
+
+	<div id="up" style="position: relative;">
+		<img src="main.jpeg"
+		style="width: 100%;">
+		<div class="text">
+			Fitness Guide 360
+			
+			<p style="font-size:3vw; ">“Success usually comes to those who are too busy to be looking for it.”</p>
+			<div id="sub" style="font-size:3vw;"><a class="one" href="#intro">Lets Start!</a></div>
+		</div>
+	</div>
+
+	<div id="intro" style="text-align: justify; margin-top:0; padding:10px; border-left:8px solid #009900; ">
+		<h1 style="color: #009900; padding-top:45px;" >Introduction</h1>
+		<p style="font-size:18px;  text-align: justify;">As beginners, we all make a common mistake when it comes to fitness, that without knowing anything about our body, muscles or diet we think hitting the gym and lifting weights will be enough to bulk up or gain weight, but this is not that easy.</p>
+
+		<p style="font-size:18px;  text-align: justify;">Bulking up or gaining weight is just as much difficult as losing weight. Before you start working out you need to have this basic knowledge about yourself.  This website will provide you the basic information that you need to have before hitting the gym.  Also, I understand that a lot of people can't afford to go to a costly gym and giving  > 1000k/month, I also had that problem so I started to collect knowledge about fitness first then I started working out. I hope you will enjoy reading this website. Let's start. </p>
+	</div>
+	<div style="background-color: #f1f1f1; text-align: justify;  padding:10px; font-size: 18px;">
+		<h2>Why you need to workout?</h2>
+		<p>Physical activity or exercise can improve your health and reduce the risk of developing several diseases like type 2 diabetes, cancer and cardiovascular disease. Physical activity and exercise can have immediate and long-term health benefits. Most importantly, regular activity can improve your quality of life. A minimum of 30 minutes a day can allow you to enjoy these benefits.</p> 
+		<h2>Benefits of regular physical activity</h2>
+		If you are regularly physically active, you may:
+		<ul>
+			<li>reduce your risk of a heart attack </li>
+			<li>manage your weight better </li>
+			<li>have a lower blood cholesterol level </li>
+			<li>lower the risk of type 2 diabetes and some cancers </li>
+			<li>have lower blood pressure </li>
+			<li>have stronger bones, muscles and joints and lower risk of developing osteoporosis </li>
+			<li>lower your risk of falls </li>
+			<li>recover better from periods of hospitalisation or bed rest </li>
+			<li>Feel better – with more energy, a better mood, feel more relaxed and sleep better. </li>
+		</ul>
+	</div>
+	<div style=" padding:20px; overflow:auto; background-color:#111;">
+		<div class="container">
+  <img src="http://image.vovworld.vn/w730/uploaded/vovworld/qosino/2019_03_09/gymanh1_ldxv.jpg"  style="width:100%">
+  <a  href="#diet" style="background-color:#ff3300; color:#fff;">Diet</a>
+</div>
+	<div  class="container margin">
+  <img src="https://www.teachpe.com/images/anatomy-physiology/muscleman620.jpg"  style="width:100%; display:block; height: 285px;">
+  <a href="#body" style="background-color:#ff9900; color:#fff;">Know Your Body</a>
+</div>
+<div  class="container margin">
+  <img src="https://ae01.alicdn.com/kf/HTB1hqJdXKuSBuNjSsplq6ze8pXa4/weightlifting-talc-crossfit-muscles-legs-sports-power-YR335-living-room-home-wall-art-decor-wood-frame.jpg" style="width:100%;">
+  <a href="#extra" style="background-color:#4da6ff; color:#fff;">Extras</a>
+</div></div>
+<div class="image">
+	<img src="https://wallpaperplay.com/walls/full/6/1/7/32744.jpg" style="width:100%; height:100%;">
+	<div class="text1">
+		<a href="#workout" style="background-color:#990000; color:#fff;">Training Program</a>
+	</div>
+	</div>
+	
+	<div id="diet" style="; padding: 10px; text-align: justify; font-size: 18px; 
+	border-left:8px solid  #ff3300;
+	border-bottom:8px solid  #ff3300; 
+	overflow:auto;">
+		<h1 style="color:#ff3300; padding-top:45px;">The Diet</h1>
+		<h2>Importance of good Nutrition </h2>
+		<p>Most of the time, the beginners make a common mistake that is, they ignore the diet. If you are going to the gym daily and not fueling up with enough food then you will not see any improvement and also you will lose more weight.  So the first step to fitness is setting your proper diet.</p>
+		<p>The food we eat plays a vital role in how we look and feel. Regular exercise is important but according to research, nutrition has the largest impact on our fitness. Using food as our medicine has become a popular theme for health improvement.</p> 
+		<h2><span style="font-size:45px;">&#10147;</span> Where to start</h2>
+		<div style="background-color:#f2f2f2;padding:10px;">
+		<h3>Know your BMR</h3>
+			<p>The basal metabolic rate (BMR) is the amount of energy needed while resting in a temperate environment when the digestive system is inactive. It is the equivalent of figuring out how much gas an idle car consumes while parked. In such a state, energy will be used only to maintain vital organs, which include the heart, lungs, kidneys, nervous system, intestines, liver, lungs, sex organs, muscles, and skin. For most people, upwards of ~70% of total energy (calories) burned each day is due to upkeep. Physical activity makes up ~20% of expenditure and ~10% is used for the digestion of food, also known as thermogenesis.</p>
+			<h2>Calculate your BMR</h2>
+			<div class="clearfix">
+			<div class="container1">
+				<form>
+			  <div class="row">
+			    <div class="col-25">
+			      <label for="weight">Weight (kg)</label>
+			    </div>
+			    <div class="col-75">
+			      <input type="number" name="weight" id="w">
+			    </div>
+			  </div>
+			  <div class="row">
+			    <div class="col-25">
+			      <label for="height">Height (cm)</label>
+			    </div>
+			    <div class="col-75">
+			      <input type="number" name="height" id="h">
+			    </div>
+			  </div>
+			  <div class="row">
+			    <div class="col-25">
+			      <label for="age">Age</label>
+			    </div>
+			    <div class="col-75">
+			      <input type="number" name="age" id="a">
+			    </div>
+			  </div>
+			  <div class="row">
+			    <div class="col-25">
+			      <label for="gender">Gender</label>
+			    </div>
+			    <div class="col-75">
+			      <input type="radio" name="test" value="m" id="male">male
+			      <input type="radio" name="test" value="f" id="female">female
+			    </div>
+			  </div>
+			  <div class="row" style="margin-top:15px;">
+			    <button class="but" type="button" onclick="bmrmale()">Calculate</button>
+			    <input class="but" style="background-color:#333; padding: 14px 15px;" type="reset">
+			  </div>
+			  </form>
+			</div>
+			<div class="side">
+			<span style="padding:14px 20px; background-color:#29a329; width:100%; display: inline-block; color:#fff; 
+			font-size:24px;">
+				Results:</span>
+				<p id="result"></p>
+			</div>
+		</div>
+		<div style="margin-top: 15px;" class="clearfix">
+		<div class="box" style="background-color: #111;">
+			<h3>Length onversion</h3>
+			<div class="row">
+			    <div class="col-25">
+			      <label for="foot">foot</label>
+			    </div>
+			    <div class="col-75">
+			      <input type="number" name="foot" id="foot">
+			    </div>
+			  </div>
+			  <div class="row">
+			    <div class="col-25">
+			      <label for="inch">Inches</label>
+			    </div>
+			    <div class="col-75">
+			      <input type="number" name="inch" id="inch">
+			    </div>
+			  </div>
+			  <button class="but" type="button" onclick="foottocm()">Calculate</button>
+			  <button class="but" style="background-color:#333; padding: 14px 15px;" onclick="location.reload();">Reset</button>
+			  <div style="margin-top:15px;">Results:
+				<p id="result1"></p></div>
+		</div>
+		<div class="box" style="background-color: #ff3300; height:317px;">
+			<h3>Weight conversion</h3>
+			<div class="row">
+			    <div class="col-25">
+			      <label for="weight">lbs</label>
+			    </div>
+			    <div class="col-75">
+			      <input type="number" name="lbs" id="lbs">
+			    </div>
+			  </div>
+			  <button style="background-color:#111;" class="but" type="button" onclick="lbstokg()">Calculate</button>
+			  <button class="but" style="background-color:green; padding: 14px 15px;" onclick="location.reload();">Reset</button>
+			   <div style="margin-top:15px;">Results:
+				<p id="result2"></p></div>
+		</div>
+		</div>
+		<!--from here-->
+		<p>Here I used the Mifflin-St Jeor Equation which is more accurate than any other early equations. <span style="color:red;"> "Please note that BMR estimates your basal metabolic rate—the amount of energy expended while at rest in a neutrally temperate environment, and in a post-absorptive state (meaning that the digestive system is inactive, which requires about 12 hours of fasting)" .</span> So if you already exercise for 3-4 days/ 6-7 days ,then your BMR will increase, upon your activity level you need to understand how much calories you need daily to fuel up.<div> To know more about BMR visit this page : <br><br><a style="dispaly:inline-block; padding:8px 10px; background-color:green; 
+			color:#fff; border-radius:16px;" href="https://www.calculator.net/bmr-calculator.html" target="_blank"> BMR calculator</a></div>
+		</p>
+		<p>
+			Calculate the total number of calories that you need based on your activity level, to maintain weight, gain weight or loose weight from this link:
+			<div>
+			<a style="dispaly:inline-block; padding:8px 10px; background-color:green; 
+			color:#fff; border-radius:16px;"href="https://www.calculator.net/calorie-calculator.html" target="_blank"> Calorie Calculator</a> </div>
+		</p>
+		</div>
+
+<h3><span style="font-size:30px;">&#10147;</span>Guidance</h3>
+<div class="clearfix">
+<b>Alwyas remember "the 70% diet and 30% workout rule"</b><br><br>
+<img  style="" class="div" src="https://pbs.twimg.com/media/CBlG8oqWMAELkjr.jpg" >
+<p>Suppose your weight is between 50kg-55kg and height 5'5"-5'9" and age 20-22 then your BMR should be or above: 1555 calories/day, while at rest in a neutrally temperate environment. So you need total 2500-3000 calories/day to gain 0.25-1kg weight/week. 
+</p>
+<h4>step1: Calculate your BMR and calculate how many calories you need</h4>
+<h4>step2: Find your macronutrient ratio</h4>
+<p>There’s a wide world of thoughts on which macronutrient ratio is best, so we narrowed it down to the three most popular approaches: The Zone Diet, Lean Mass, and Body Type. In your spreadsheet, you’ll see options for all three. Select one based on some of the information below and stick with it.</p>
+<p><b>Macros Based on The Zone Diet</b><br>
+A lot of CrossFitters and other athletes follow something close to The Zone Diet: 40% carbs, 30% fat, and 30% protein. A former research scientist, Dr. Sears, first published this diet in his 1995 book, based on several research trials that showed improved athlete performance and body composition.</p>
+<p><b>Macros Based on Lean Mass</b><br>
+	Proponents of this approach feel that using your total body weight to calculate your macros isn’t as accurate as using your lean body mass (your mass minus your fat). This approach bases your necessary protein intake on that lean mass, and will vary between people as a result.</p>
+	
+	<p><b>Macros Based on Body Type</b><br>
+		Each body type responds differently to macronutrients, so calculating based on body type can be a great way to find your macros. Keep in mind that most people don’t strictly adhere to one body type.<br><br>
+		<img class="div" src="https://www.precisionnutrition.com/wp-content/uploads/2009/02/somatotype-body-types.jpg">
+		<b>– Ectomorph:</b> Ectomorphs are naturally thin with skinny limbs, a high tolerance for carbohydrates, and a fast metabolic rate. A good starting ratio is 25% protein, 55% carbs and 20% fat.<br>
+
+		<b>– Mesomorph:</b> Mesomorphs are naturally muscular and athletic. They have a moderate carb tolerance and metabolic rate. Mesomorphs should start at a 30% protein, 40% carb, 30% fat ratio.<br>
+
+		<b>– Endomorph:</b> If you’re naturally broad and thick, you’re probably an endomorph. Endomorphs have a low carbohydrate tolerance and a slow metabolic rate. If you’re an endomorph, try a ratio of 35% protein, 25% carbs and 40% fat.<br></p></div>
+		<h4>step3: Prepare your Diet and Track it</h4>
+		<p> 
+			Once you’ve decided which macro-calculating approach sounds best to you, use the information in your spreadsheet to begin planning out your meals. Using a scale and measuring cups/spoons will help you stay consistent and make it easier to calculate your calories. Or you can use some application to messure and track calories . I will give some best application link below.
+			<div class="clearfix">
+			<div class="app">
+				<a href="https://play.google.com/store/apps/details?id=com.healthifyme.basic&hl=en" target="_blank">
+<img src="https://lh3.googleusercontent.com/gJNUuDrJltPe1cf0qnkzEhXuIVYIgeweI032UcFz3MAJtIShwEyZlZ3PqBEbTXp1zEM=s180-rw" 
+height="auto" width="100%"><br>
+				<p style=" text-align:center;">HealthifyMe<br><br>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star"></span>
+				</p></a>
+			</div>
+			<div class="app" style="">
+				<a href="https://play.google.com/store/apps/details?id=com.myfitnesspal.android&hl=en" target="_blank">
+<img src="https://lh3.googleusercontent.com/WkGXEesGEu4ayZctjADlDKdscS3Ve1hmoVzhHQYh9NuK9QpDA3Rx6ae3jg7VH2dFZqk=s180-rw" 
+height="auto" width="100%"><br>
+				<p style=" text-align:center;">MyFitnessPal<br><br>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star checked"></span>
+				</p></a>
+			</div>
+			<div class="app" style="">
+				<a href="https://play.google.com/store/apps/details?id=com.fourtechnologies.mynetdiary.ad&hl=en" target="_blank">
+<img src="https://lh3.googleusercontent.com/G4dp_aFjFEJYWQYICmsOOO3MglKnLEVZywSA10vtRcNJKdGxYiydWees0daTEhu-PDs=s180-rw" 
+height="auto" width="100%"><br>
+				<p style=" text-align:center;">MyNetDiary<br><br>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star checked"></span>
+				</p></a>
+			</div>
+			<div class="app" style="">
+				<a href="https://play.google.com/store/apps/details?id=com.fitnow.loseit&hl=en" target="_blank">
+<img src="https://lh3.googleusercontent.com/eQXGwwKkSAqezH7nicdMhsM7BfUf29XQFtPbJLdOH81Grtk8ylKqZGISzcWcSddgcWs=s180-rw" 
+height="auto" width="100%"><br>
+				<p style=" text-align:center;">	Lose It!<br><br>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star "></span>
+				</p></a>
+			</div>
+<div class="app" style="">
+				<a href="https://play.google.com/store/apps/details?id=com.fatsecret.android&hl=en" target="_blank">
+<img src="https://lh3.googleusercontent.com/D_a9gAwKQPNFJg9nSWOA5nV2Ycsgky213sZAbom0w5OBtwQ6M6NHg1doNYoj-M49FCQY=s180-rw" 
+height="auto" width="100%"><br>
+				<p style=" text-align:center;">FatSecret<br><br>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star "></span>
+				</p></a>
+			</div>
+			</div>
+			<!--here-->
+			<b>The Calorie Content of Each Macro</b><br>
+			<ul>
+				<li>1 gram of carbohydrates = 4 calories</li>
+				<li>1 gram of protein = 4 calories</li>
+				<li>1 gram of fat = 9 calories</li>
+			</ul></p>
+			<h4>THINGS TO KEEP IN MIND</h4>
+			<ul>
+				<li>Don’t put your body into starvation mode by under-eating. This will not only throw your hormones out of balance, but it’ll also affect your ability to lose weight and put on lean muscle.</li>
+				<li>Try to make each meal have a good source of protein, carbohydrates, and fat. All calories are not created equal.</li>
+				<li>EAT ALL YOUR MACROS.</li>
+				<li>Eat on a consistent schedule. Sounds simple, but it’s easy to get swept up in the flow of the day and forget to eat. Highs and lows in your blood sugar can cause stress to your body, leading to inflammation, hormone imbalances, interrupted sleep and more.</li>
+				<li>Be sure to eat protein and carbs after your workout to aid your recovery.</li>
+				<li>If you’re new to the Clean Challenge, then try to replace simple carbs like bread, pasta and cereal with healthy carbs like starchy fruits, veggies and rice. It’s important to get enough carbs so you can recover from your CrossFit workouts.</li></ul>
+				<center><img style="margin:20px; height:auto; width:90%"src="https://irp-cdn.multiscreensite.com/c04108a7/dms3rep/multi/desktop/Screen-Shot-2016-11-18-at-10.16.56-AM-1024x453.png"></img></center>
+					<p>You can consult with a Dietitian or you can reserach online or by watching helpful youtube video on pre-workout, post-workout meal and daily meal to make a proper diet for yourself. I would advice everyone don't go for the supplyments, at first try to make proper diet, follow the diet strictly. If you don't see any changes then consult a doctor. Try to make improvements naturally not by consuming powders.  </p>
+
+<h3><span style="font-size:30px;">&#10147;</span> Height & Weight ratio for adult men and women</h3>
+
+<table id="customers">
+<tbody>
+<tr>
+<th><b>Height</b><br />ft. in. (cms)</th>
+<th><b>Female</b></th>
+<th><b>Male</b></th>
+</tr>
+<tr>
+<td>4' 6"<br />(137 cm)</td>
+<td>63 - 77 lb<br />(28.5 - 34.9 kg)</td>
+<td>63 - 77 lb<br />(28.5 - 34.9 kg)</td>
+</tr>
+<tr>
+<td>4' 7"<br />(140 cm)</td>
+<td>68 - 83 lb<br />(30.8 - 37.6 kg)</td>
+<td>68 - 84 lb<br />(30.8 - 38.1 kg)</td>
+</tr>
+<tr>
+<td>4' 8"<br />(142 cm)</td>
+<td>72 - 88 lb<br />(32.6 - 39.9 kg)</td>
+<td>74 - 90 lb<br />(33.5 - 40.8 kg)</td>
+</tr>
+<tr>
+<td>4' 9"<br />(145 cm)</td>
+<td>77 - 94 lb<br />(34.9 - 42.6 kg)</td>
+<td>79 - 97 lb<br />(35.8 - 43.9 kg)</td>
+</tr>
+<tr>
+<td>4' 10"<br />(147 cm)</td>
+<td>81 - 99 lb<br />(36.4 - 44.9 kg)</td>
+<td>85 - 103 lb<br />(38.5 - 46.7 kg)</td>
+</tr>
+<tr>
+<td>4' 11"<br />(150 cm)</td>
+<td>86 - 105 lb<br />(39 - 47.6 kg)</td>
+<td>90 - 110 lb<br />(40.8 - 49.9 kg)</td>
+</tr>
+<tr>
+<td>5' 0"<br />(152 cm)</td>
+<td>90 - 110 lb<br />(40.8 - 49.9 kg)</td>
+<td>95 - 117 lb<br />(43.1 - 53 kg)</td>
+</tr>
+<tr>
+<td>5' 1"<br />(155 cm)</td>
+<td>95 - 116 lb<br />(43.1 - 52.6 kg)</td>
+<td>101 - 123 lb<br />(45.8 - 55.8 kg)</td>
+</tr>
+<tr>
+<td>5' 2"<br />(157 cm)</td>
+<td>99 - 121 lb<br />(44.9 - 54.9 kg)</td>
+<td>106 - 130 lb<br />(48.1 - 58.9 kg)</td>
+</tr>
+<tr>
+<td>5' 3"<br />(160 cm)</td>
+<td>104 - 127 lb<br />(47.2 - 57.6 kg)</td>
+<td>112 - 136 lb<br />(50.8 - 61.6 kg)</td>
+</tr>
+<tr>
+<td>5' 4"<br />(163 cm)</td>
+<td>108 - 132 lb<br />(49 - 59.9 kg)</td>
+<td>117 - 143 lb<br />(53 - 64.8 kg)</td>
+</tr>
+<tr>
+<td>5' 5"<br />(165 cm)</td>
+<td>113 - 138 lb<br />(51.2 - 62.6 kg)</td>
+<td>122 - 150 lb<br />(55.3 - 68 kg)</td>
+</tr>
+<tr>
+<td>5' 6"<br />(168 cm)</td>
+<td>117 - 143 lb<br />(53 - 64.8 kg)</td>
+<td>128 - 156 lb<br />(58 - 70.7 kg)</td>
+</tr>
+<tr>
+<td>5' 7"<br />(170 cm)</td>
+<td>122 - 149 lb<br />(55.3 - 67.6 kg)</td>
+<td>133 - 163 lb<br />(60.3 - 73.9 kg)</td>
+</tr>
+<tr>
+<td>5' 8"<br />(173 cm)</td>
+<td>126 - 154 lb<br />(57.1 - 69.8 kg)</td>
+<td>139 - 169 lb<br />(63 - 76.6 kg)</td>
+</tr>
+<tr>
+<td>5' 9"<br />(175 cm)</td>
+<td>131 - 160 lb<br />(59.4 - 72.6 kg)</td>
+<td>144 - 176 lb<br />(65.3 - 79.8 kg)</td>
+</tr>
+<tr>
+<td>5' 10"<br />(178 cm)</td>
+<td>135 - 165 lb<br />(61.2 - 74.8 kg)</td>
+<td>149 - 183 lb<br />(67.6 - 83 kg)</td>
+</tr>
+<tr>
+<td>5' 11"<br />(180 cm)</td>
+<td>140 - 171 lb<br />(63.5 - 77.5 kg)</td>
+<td>155 - 189 lb<br />(70.3 - 85.7 kg)</td>
+</tr>
+<tr>
+<td>6' 0"<br />(183 cm)</td>
+<td>144 - 176 lb<br />(65.3 - 79.8 kg)</td>
+<td>160 - 196 lb<br />(72.6 - 88.9 kg)</td>
+</tr>
+<tr>
+<td>6' 1"<br />(185 cm)</td>
+<td>149 - 182 lb<br />(67.6 - 82.5 kg)</td>
+<td>166 - 202 lb<br />(75.3 - 91.6 kg)</td>
+</tr>
+<tr>
+<td>6' 2"<br />(188 cm)</td>
+<td>153 - 187 lb<br />(69.4 - 84.8 kg)</td>
+<td>171 - 209 lb<br />(77.5 - 94.8 kg)</td>
+</tr>
+<tr>
+<td>6' 3"<br />(191 cm)</td>
+<td>158 - 193 lb<br />(71.6 - 87.5 kg)</td>
+<td>176 - 216 lb<br />(79.8 - 98 kg)</td>
+</tr>
+<tr>
+<td>6' 4"<br />(193 cm)</td>
+<td>162 - 198 lb<br />(73.5 - 89.8 kg)</td>
+<td>182 - 222 lb<br />(82.5 - 100.6 kg)</td>
+</tr>
+<tr>
+<td>6' 5"<br />(195 cm)</td>
+<td>167 - 204 lb<br />(75.7 - 92.5 kg)</td>
+<td>187 - 229 lb<br />(84.8 - 103.8 kg)</td>
+</tr>
+<tr>
+<td>6' 6"<br />(198 cm)</td>
+<td>171 - 209 lb<br />(77.5 - 94.8 kg)</td>
+<td>193 - 235 lb<br />(87.5 - 106.5 kg)</td>
+</tr>
+<tr>
+<td>6' 7"<br />(201 cm)</td>
+<td>176 - 215 lb<br />(79.8 - 97.5 kg)</td>
+<td>198 - 242 lb<br />(89.8 - 109.7 kg)</td>
+</tr>
+<tr>
+<td>6' 8"<br />(203 cm)</td>
+<td>180 - 220 lb<br />(81.6 - 99.8 kg)</td>
+<td>203 - 249 lb<br />(92 - 112.9 kg)</td>
+</tr>
+<tr>
+<td>6' 9"<br />(205 cm)</td>
+<td>185 - 226 lb<br />(83.9 - 102.5 kg)</td>
+<td>209 - 255 lb<br />(94.8 - 115.6 kg)</td>
+</tr>
+<tr>
+<td>6' 10"<br />(208 cm)</td>
+<td>189 - 231 lb<br />(85.7 - 104.8 kg)</td>
+<td>214 - 262 lb<br />(97 - 118.8 kg)</td>
+</tr>
+<tr>
+<td>6' 11"<br />(210 cm)</td>
+<td>194 - 237 lb<br />(88 - 107.5 kg)</td>
+<td>220 - 268 lb<br />(99.8 - 121.5 kg)</td>
+</tr>
+<tr>
+<td>7' 0"<br />(213 cm)</td>
+<td>198 - 242 lb<br />(89.8 - 109.7 kg)</td>
+<td>225 - 275 lb<br />(102 - 124.7 kg)</td>
+</tr>
+</tbody>
+</table>
+<p>From the above chart you can now guess what your ideal weight should be according to your height</p>
+
+<h3><span style="font-size:30px;">&#10147;</span> Protein(the most important macro)</h3>
+<!--from here-->
+<p>Protein is required by everyone. Apart from muscle building, it has numerous other functions to play in our body as well. Protein are required for our immunity, for all enzymatic and hormonal functions, brain functioning, cells and tissue regeneration and repair. Deficiency of proteins might lead to loss of muscle, weakness, lethargy, fatigue, weak hair, brittle nails, loss of strength, altered hormonal and enzymatic functions and water retention in our body.
+
+Usually our diets has been shown as insufficient in proteins due to which ICMR has given specific RDA for all individuals. 1g per kg body weight per day is advisable to all healthy individuals. These values increases in case the person is involved in any additional physical activity like a strength athlete or endurance athlete. Hence it not only an essential nutrients for them but for us as well.<br>
+<h3><span style="font-size:30px;">&#10147;</span> protein requirements</h3>
+<table id="customers">
+	<tr>
+	<th>Type</th>
+	<th>Amount</th>
+	<tr>
+		<tr>
+			<td>Average person</td>
+			<td>1g/kg of body weight</td>
+		</tr>
+		<tr>
+			<td>Beginner(workout)</td>
+			<td>0.8g-1.7g/kg of body weight</td>
+		</tr>
+		<tr>
+			<td>Intermediate(workout)</td>
+			<td>1.4g-2.7g/kg of body weight</td>
+		</tr>
+	</table>
+	<h3><span style="font-size:30px;">&#10147;</span> Calculate your protein requirements</h3>
+	<div class="row">
+			    <div class="col-25">
+			      <label for="protein">Weight(kg)</label>
+			    </div>
+			    <div class="col-75">
+			      <input type="number" name="protein" id="protein">
+			    </div>
+			  </div>
+			  <button style="background-color:#111;" class="but" type="button" onclick="protein()">Calculate</button>
+			  <button class="but" style="background-color:green; padding: 14px 15px;" onclick="location.reload();">Reset</button>
+			   <div style="margin-top:15px;">Results:
+				<p id="result3"></p></div>
+	<h3><span style="font-size:30px;">&#10147;</span> Best protein sources</h3>
+
+<table id="customers">
+<tr>
+<th>Food</th>
+<th>Images</th>
+<th >Grams of protein</th>
+</tr>
+<tr>
+<td>Canned tuna &#8211; 3 ounces</td>
+<td class="image3"><img style="display:block" src="https://images-na.ssl-images-amazon.com/images/I/41rYHVE56HL.jpg" height="50%" width="100%"></td>
+<td >20</td>
+</tr>
+<tr>
+<td>Salmon &#8211; 3 ounces</td>
+<td class="image3"><img style="display:block" src="https://fishmarket.ge/content/images/thumbs/0000349_norwegian-salmon_870.jpeg" height="50%" width="100%"></td>
+<td>
+<p >19</p>
+</td>
+</tr>
+<tr>
+<td>Turkey breast &#8211; 3 ounces</td>
+<td class="image3"><img style="display:block" src="https://images-gmi-pmc.edge-generalmills.com/ff5a14ce-0e32-442e-9249-22812d06e8b5.jpg" height="50%" width="100%"></td>
+<td>
+<p >26</p>
+</td>
+</tr>
+<tr>
+<td>Chicken breast &#8211; 3 ounces</td>
+<td class="image3"><img style="display:block" src="https://www.fifteenspatulas.com/wp-content/uploads/2014/02/SlowCookerChickenBreastHowtoFifteenSpatulas.jpg" height="50%" width="100%"></td>
+<td>
+<p >27</p>
+</td>
+</tr>
+<tr>
+<td>Skirt steak &#8211; 3 ounces</td>
+<td class="image3"><img style="display:block" src="steak.jpg" height="50%" width="100%"></td>
+<td>
+<p>25</p>
+</td>
+</tr>
+<tr>
+<td>Ground beef (70% lean) &#8211; 3 ounces</td>
+<td class="image3"><img style="display:block" src="https://cdn.shopify.com/s/files/1/1115/6230/products/beef-100-grass-fed-ground-beef-1.jpg?v=1548539156" height="50%" width="100%"></td>
+<td>
+<p >22</p>
+</td>
+</tr>
+<tr>
+<td>Kidney beans &#8211; 1/3 cup</td>
+<td class="image3"><img style="display:block" src="https://images-na.ssl-images-amazon.com/images/I/51pvFJ%2B%2BlKL._SX425_.jpg" height="50%" width="100%"></td>
+<td>
+<p >4</p>
+</td>
+</tr>
+<tr>
+<td>Black beans &#8211; 1/3 cup</td>
+<td class="image3"><img style="display:block" src="https://www.budgetbytes.com/wp-content/uploads/2010/06/Quick-Seasoned-Black-Beans-finished-500x500.jpg" height="50%" width="100%"></td>
+<td>
+<p >5</p>
+</td>
+</tr>
+<tr>
+<td>Non-fat milk &#8211; 1/2 cup</td>
+<td class="image3"><img style="display:block" src="https://iligan.gokart.ph/wp-content/uploads/2019/03/Magnolia-Non-Fat-Milk-1L.jpg" height="50%" width="100%"></td>
+<td>
+<p >4</p>
+</td>
+</tr>
+<tr>
+<td>Soy milk &#8211; 1/2 cup</td>
+<td class="image3"><img style="display:block" src="https://3.imimg.com/data3/EI/EK/MY-4202573/soya-milk-500x500.jpg" height="50%" width="100%"></td>
+<td>
+<p >4</p>
+</td>
+</tr>
+<tr>
+<td>Eggs &#8211; 1 large</td>
+<td class="image3"><img style="display:block" src="https://www.simplyrecipes.com/wp-content/uploads/2014/07/hard-boiled-eggs-horiz-800.jpg" height="50%" width="100%"></td>
+<td>
+<p >6</p>
+</td>
+</tr>
+<tr>
+<td>Mozzarella cheese &#8211; 3 ounces</td>
+<td class="image3"><img style="display:block" src="https://cdn.shopify.com/s/files/1/0150/0232/products/Pearl_Valley_Mozzarella_Slices_99f3ce06-a72e-4510-9c95-d41ff2f5be38_grande.jpg?v=1534871002" height="50%" width="100%"></td>
+<td>
+<p >19</p>
+</td>
+</tr>
+<tr>
+<td>Cheddar &#8211; 3 ounces</td>
+<td class="image3"><img style="display:block" src="https://cdn.shopify.com/s/files/1/0150/0232/products/Pearl_Valley_Sharp_Cheddar_Slices_large.jpg?v=1524073010" height="50%" width="100%"></td>
+<td>
+<p >19</p>
+</td>
+</tr>
+<tr>
+<td>Low-fat cottage cheese &#8211; 1/2 cup</td>
+<td class="image3"><img style="display:block" src="http://www.tragos-tragos.com/wp-content/uploads/2018/03/Calories-In-1-Cup-Of-Cottage-Cheese-L67-About-Remodel-Simple-Home-Interior-Design-Ideas-with-Calories-In-1-Cup-Of-Cottage-Cheese.jpg" height="50%" width="100%"></td>
+<td>
+<p >12</p>
+</td>
+</tr>
+<tr>
+<td>Peanut butter &#8211; 2 tbsp.</td>
+<td class="image3"><img style="display:block" src="https://www.organicfacts.net/wp-content/uploads/peanutbutter1.jpg" height="50%" width="100%"></td>
+<td>
+<p >7</p>
+</td>
+</tr>
+<tr>
+<td>Almonds &#8211; 1/4 cup (24 nuts)</td>
+<td class="image3"><img style="display:block" src="https://www.organicfacts.net/wp-content/uploads/almondsnutrition.jpg" height="50%" width="100%"></td>
+<td>
+<p >8</p>
+</td>
+</tr>
+<tr>
+<td>Walnuts &#8211; 1/4 cup (14 halves)</td>
+<td class="image3"><img style="display:block" src="https://nuts.com/images/auto/510x340/assets/e71c5afc02f3f4fe.jpg" height="50%" width="100%"></td>
+<td>
+<p >3</p>
+</td>
+</tr>
+<tr>
+<td>Veggie burger &#8211; 1 patty</td>
+<td class="image3"><img style="display:block" src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fcdn-image.myrecipes.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2Fclean-veggie-burgers-ck.jpg%3Fitok%3D_RJ5dLM4&w=450&c=sc&poi=face&q=85" height="50%" width="100%"></td>
+<td>
+<p >23</p>
+</td>
+</tr>
+<tr>
+<td>Tofu &#8211; 1/2 cup</td>
+<td class="image3"><img style="display:block" src="https://simpleveganblog.com/wp-content/uploads/2019/03/Easy-marinated-tofu-6.jpg" height="50%" width="100%"></td>
+<td>
+<p >11</p>
+</td>
+</tr>
+<tr>
+<td>Yogurt, plain &#8211; 1 cup</td>
+<td class="image3"><img style="display:block" src="https://www.kos.shopping/image/cache/data/yoghurt-500x500.jpg" height="50%" width="100%"></td>
+<td>
+<p >9</p>
+</td>
+</tr>
+<tr>
+<td>Whey protein powder &#8211; 1/3 cup</td>
+<td class="image3"><img style="display:block" src="https://images-na.ssl-images-amazon.com/images/I/71TyEpn11-L._SX466_.jpg" height="50%" width="100%"></td>
+<td>
+<p >19</p>
+</td>
+</tr>
+<tr>
+<td colspan="3">Source: <em>USDA National Nutrient Database for Standard Reference</em></td>
+</tr>
+</tbody>
+</table>
+<div>
+	<h3>To know more about protein, please visit this site</h3>
+<a style="dispaly:inline-block; padding:8px 10px; background-color:#ff3300; 
+	color:#fff; border-radius:16px;" href="https://www.helpguide.org/articles/healthy-eating/choosing-healthy-protein.htm" target="_blank"> HelpGuide.org</a> </div></p>
+
+
+<hr>
+<div>
+
+	<h4>Not just only protein you will need healthy fat and high carbs healthy food also to maintain, gain weight. If you want lists of healthy fat and carbs contact me -</h4> <a style="dispaly:inline-block; margin:5px; padding:8px 10px; background-color:#ff3300; 
+	color:#fff; border-radius:16px;" href="#about">Contact</a>
+</div>
+
+<div id="res1" style="margin-top:30px;">
+<!--here--><hr>
+<h3><span style="font-size:35px;">&#10147;</span> Diet Plan(3150-3600 calories/day)</h3>
+<p>Please note that this diet plan was made by me for my requirements under budget, you can obviously change or upgrade this plan. But this plan gives > 3000 calories/day.</p>
+<div style="overflow-x:auto;">
+<table id="customers">
+	<tr>
+		<th>Meal</th>
+		<th>Time</th>
+		<th>Food</th>
+		<th>Calories</th>
+	</tr>
+	<tr>
+		<td>Meal 1</td>
+		<td>Early morning(6 A.M)</td>
+		<td>soaked nut, soaked raisins.</td>
+		<td>60 </td>
+	</tr>
+	<tr>
+		<td>Meal 2</td>
+		<td>Breakfast(8A.M - 10A.M)</td>
+		<td>2 eggs(boiled),<br>
+			1 glass milk,<br>
+			2 banana,<br>
+			2 piece peanut butter sandwich.
+		</td>
+		<td>828</td>
+	</tr>
+	<tr>
+		<td>Meal 3</td>
+		<td>Mid meal(10A.M - 12P.M)</td>
+		<td>Roasted soybean or
+			Roasted almond or roasted brownnut + milk(1 cup)<br>
+			or<br>
+			1 square groundnut chikkis + milk(1 cup).
+		</td>
+		<td>~ 271</td>
+	</tr>
+	<tr>
+		<td>Meal 4</td>
+		<td>Lunch(2 P.M)</td>
+		<td>Salad/chicken soup(1 katori)<br>
+			vegetables(1 katori)<br>
+			rooti(2)/white rice(1 katori)<br>
+			dal<br>
+			soyabean curry<br>
+			chicken/fish
+		</td>
+		<td>610 to 710 </td>
+	</tr>
+	<tr>
+		<td>Meal 5</td>
+		<td>(4 P.M)</td>
+		<td>Coffee/ Milk/ tea +<br>
+			oats cokies or biscuit
+			</td>
+		<td>386 </td>
+	</tr>
+	<tr>
+		<td>Meal 6</td>
+		<td>Evening Snacks(6 P.M)</td>
+		<td>Roasted soybean or
+			Roasted almond or roasted brownnut + milk(1 cup)<br>
+			or<br>
+			1 square groundnut chikkis + milk(1 cup).</td>
+		<td>~ 271 </td>
+	</tr>
+	<tr>
+		<td>Meal 7</td>
+		<td>Dinner(9P.M - 10P.M)</td>
+		<td>
+			Salad/chicken soup(1 katori)<br>
+			vegetables(1 katori)<br>
+			rooti(4-5)/white rice(2 katori)<br>
+			dal<br>
+			soyabean curry<br>
+			chicken/fish<br>
+			1 egg
+		</td>
+		<td>929 </td>
+	</tr>
+	<tr>
+		<td>Meal 8</td>
+		<td>Before bedtime</td>
+		<td>1 cup milk + 2 bananas</td>
+		<td>200 to 309</td>
+	</tr>
+</table>
+</div>
+<h3>Nutrients measure(<font size="3">of the above diet plan</font>)</h3>
+<table  id="customers">
+	<tr>
+		<th>Proteins</th>
+		<th>Fats</th>
+		<th>Carbs</th>
+		<th>Fiber</th>
+	</tr>
+	<tr>
+		<td>162.5g</td>
+		<td>108.2g</td>
+		<td>401.7g</td>
+		<td>51.8g</td>
+	</tr>
+</table>
+</div>
+<div  class="clearfix">
+  <div class="img-container">
+  <img src="https://cdn-prod.medicalnewstoday.com/content/images/articles/007/7381/raw-food-diet-contains-uncooked-vegetables-fruits-and-juices.jpg"  style="width:100%">
+  </div>
+  <div class="img-container">
+  <img src="https://giantfitnessclubs.com/wp-content/uploads/2017/11/GF-post-1-healthy-snacks.jpg"  style="width:100%">
+  </div>
+  <div class="img-container">
+  <img src="https://cdn.shopify.com/s/files/1/1932/5705/articles/Guide_to_Pre-workout_and_Post-workout_Supplements_1_1200x_bab5bb49-f62b-4687-a31c-3041682fdfdc_1600x.jpg?v=1562602631"  style="width:100%">
+  </div>
+  <h4>Remember to take sufficient protein and food after workout because that is the time when your body need them most to repair the damaged muscles and create new stronger muscles. Make sure to make  a preworkout and postworkout  diet.</h4>
+</div>
+</div><!--diet div-->
+<div id="body" style="; padding: 10px; text-align: justify; font-size: 18px; 
+border-left:8px solid  #ff9900;
+border-bottom:8px solid  #ff9900;
+ overflow:auto;">
+		<h1 style="color:#ff9900; padding-top:45px;">Know your body</h1>
+		<p>The muscular system is responsible for the movement of the human body. Attached to the bones of the skeletal system are about 700 named muscles that make up roughly half of a person’s body weight. Each of these muscles is a discrete organ constructed of skeletal muscle tissue, blood vessels, tendons, and nerves. Muscle tissue is also found inside of the heart, digestive organs, and blood vessels. In these organs, muscles serve to move substances throughout the body.
+		</p>
+		<img src="muscels.jpg" height="auto" width="100%">
+		<center>So from the above picture you can see all different muscles of human body</center></img><br>
+		
+		<h2><span style="font-size:45px;">&#10147;</span> Upper Body</h2>
+			<p>
+				
+			<h3>Upper Back Muscles</h3>
+				<div class="clearfix">
+					<h4>Trapezius</h4>
+				<a href="trap.jpg" target="_blank">
+				<img class="div" src="trap.jpg" ></a>
+				This is a large triangular shaped muscle that runs from the centre of your back up to the neck, running across your shoulder blade. Working the trapezius will help to sculpt the back of your shoulders. As a bonus, strengthening this muscle will also help to ward off back and neck pain - the sort of dull ache you get from sitting at a desk or computer all day.
+				</div>
+				<div class="clearfix">
+					<h4>Rhomboids</h4>
+				<a href="Rhomboids.png" target="_blank">
+				<img class="div" src="Rhomboids.png" ></a>
+				
+				These are small muscles in the centre of your back, running up to just below the base of your neck. Working the rhomboids will help to hold your shoulders back and maintain good posture.
+				</div>
+				<div class="clearfix">
+					<h4>latissimus dorsi </h4>
+					<a href="lat.png" target="_blank">
+				<img class="div" src="lat.png" ></a>
+				
+				The latissimus dorsi  is a large, flat muscle on the back that stretches to the sides, behind the arm, and is partly covered by the trapezius on the back near the midline.The pair of muscles are commonly known as "lats", especially among bodybuilders. The latissimus dorsi is the largest muscle in the upper body.
+			</div>
+				<h3>Shoulder Muscles</h3>
+				<div class="clearfix">
+					<h4>Deltoids</h4>
+					<a href="Deltoids.jpg" target="_blank">
+				<img class="div" src="Deltoids.jpg" ></a>
+				
+				These muscles wrap right around the top of your shoulders. They are split into three areas - the front/anterior deltoid, the side/lateral deltoid, and the rear/posterior deltoid. It is these muscles that give your shoulders their versatility and great range of movement. Toning these will help to give a more defined silhouette; less rounded and sloping and a little more sharp a shape.
+			</div>
+			<div class="clearfix">
+				<h4>Rotator Cuff (Rotators)</h4>
+				<a href="Rotator Cuff (Rotators).jpg" target="_blank">
+				<img class="div" src="Rotator Cuff (Rotators).jpg" ></a>
+				
+				Four small muscles beneath your shoulder that help to hold your arm in place. Firming and strengthening here helps to pull in your underarm. Think roll-on deodorant ads, and having a smooth looking armpit when raising your arms and getting down on the dancefloor.
+			</div>
+				<h3>Chest Muscles</h3>
+				<div class="clearfix">
+					<h4>Pectorals</h4>
+					<a href="female-chest-muscles-with-labels-hank-grebe.jpg" target="_blank">
+				<img class="div" src="female-chest-muscles-with-labels-hank-grebe.jpg" style="width:32.5%;" ></a>
+				<a href="chest.jpg" target="_blank">
+				<img class="div" src="chest.jpg" ></a>
+				
+				These are two large, flat muscles that run across the surface of your chest. These muscles generally come into play when pushing something or hugging someone. The benefit of working the pectorals is somewhat different for men and women. For men, exercising these muscles will increase chest size and definition. For women, these are the muscles underlying and providing support for the bust, so toning them will help to lift the bust.
+			</div>
+				<h3>Arm Muscles</h3>
+				<div class="clearfix">
+					<h4>Biceps</h4>
+					<a href="bicep.jpg" target="_blank">
+				<img class="div" src="bicep.jpg" ></a>
+				
+				The muscles at the front of your upper arm. You use these when you bend your arm or pick things up. These are the ones you flex when showing someone how big (or small) the muscles in your arms are. Toning these will give shape and definition to your upper arm.</div>
+				<div class="clearfix">
+					<h4>Triceps</h4>
+					<a href="tricep.jpg" target="_blank">
+				<img class="div" src="tricep.jpg" ></a>
+				
+				These are situated at the back of your upper arms. They oppose the biceps, and come into play when you straighten your arm or push something. Toning your triceps will help to get rid of the flabby bit that hangs down when you hold your arm out.</div>
+				<div class="clearfix">
+					<h4>Forearm Muscles</h4>
+				<a href="forearm.jpg" target="_blank">
+				<img class="div" src="forearm.jpg" ></a>
+				
+				These are the muscles that run from your wrist to your elbow, and there are quite a lot of them lurking under there! Working and building these will not only help that overall toned look on your arms (which is what we're going for) but will also help with/ward off conditions such as Carpal Tunnel Syndrome and other wrist complaints.
+			</div>
+			<h3>Abdominal muscle</h3>
+			<div class="clearfix">
+				<a href="abs.jpg" target="_blank">
+				<img class="div" src="abs.jpg" ></a>
+			<p style="padding-top:50px">The rectus abdominis muscle, also known as the "abdominal muscle" or "abs", is a paired muscle running vertically on each side of the anterior wall of the human abdomen, as well as that of some other mammals. There are two parallel muscles, separated by a midline band of connective tissue called the linea alba. It extends from the pubic symphysis, pubic crest and pubic tubercle inferiorly, to the xiphoid process and costal cartilages of ribs V to VII superiorly. The proximal attachments are the pubic crest and the pubic symphysis. It attaches distally at the costal cartilages of ribs 5-7 and the xiphoid process of the sternum.</p></div>
+			<div class="clearfix">
+			<a href="Abs2.png" target="_blank">
+			<img  class="left" src="Abs2.png" ></a>
+			<p style="padding-top:100px">The Abdominalus Sucurum is contained in the rectus sheath, which consists of the aponeuroses of the lateral abdominal muscles. Bands of connective tissue called the tendinous intersections traverse the rectus abdominis, which separates this parallel muscle into distinct muscle bellies. The outer, most lateral line, defining the "abs" is the linea semilunaris. In the abdomens of people with low body fat, these muscle bellies can be viewed externally and are commonly referred to as "four", "six", "eight", or "ten packs", depending on how many are visible; although, six is the most common.</p></div>
+			</p>
+		
+		<h2><span style="font-size:45px;">&#10147;</span> Lower Body</h2>
+			
+			<div class="clearfix">
+				<h3>Gluteal muscles</h3>
+			<a href="glute-muscle-stretches.png" target="_blank">
+			<img  class="left" src="glute-muscle-stretches.png" ></a>
+			The gluteal muscles are a group of three muscles which make up the buttocks: the gluteus maximus, gluteus medius and gluteus minimus. The three muscles originate from the ilium and sacrum and insert on the femur. The functions of the muscles include extension, abduction, external rotation, and internal rotation of the hip joint.
+		</div>
+		
+			<div class="clearfix">
+				<h3>Quadriceps muscle</h3>
+				
+				<a href="vastus-muscles.jpg" target="_blank">
+				<img  class="div" src="vastus-muscles.jpg" ></a>
+				The quadriceps femoris  is a large muscle group that includes the four prevailing muscles on the front of the thigh.
+
+				It is the great extensor muscle of the knee, forming a large fleshy mass which covers the front and sides of the femur. The name derives from Latin four-headed muscle of the femur.
+			</div>
+			<div class="clearfix">
+				<h3>Hamstrings muscle</h3>
+				
+				<a href="GettyImages-87308179-56a05f563df78cafdaa14cd4.jpg" target="_blank">
+				<img  class="div" src="GettyImages-87308179-56a05f563df78cafdaa14cd4.jpg" ></a>
+				In human anatomy, a hamstring is one of the three posterior thigh muscles in between the hip and the knee (from medial to lateral: semimembranosus, semitendinosus and biceps femoris). The hamstrings are quite susceptible to injury. In quadrupeds, the hamstring is the single large tendon found behind the knee or comparable area.
+			</div>
+			<div class="clearfix">
+				<h3>Calves muscle</h3>
+				
+				<a href="calf-muscles.jpg" target="_blank">
+				<img  class="div" src="calf-muscles.jpg" ></a>
+				The calf  is the back portion of the lower leg in human anatomy. The muscles within the calf correspond to the posterior compartment of the leg. The two largest muscles within this compartment are known together as the calf muscle and attach to the heel via the Achilles tendon. Several other, smaller muscles attach to the knee, the ankle, and via long tendons to the toes.
+			</div>
+		
+		</div><!--know your body div-->
+		<div id="workout" style=" padding: 10px; text-align: justify; font-size: 18px; 
+		border-left:8px solid  #990000; 
+		border-bottom:8px solid  #990000; 
+		overflow:auto;">
+		<h1 style="color:#990000; padding-top:45px;">Training Program</h1>
+		<h3>Things to do before workout</h3>
+		<ul>
+			<li>Prioritize getting enough good quality sleep.</li>
+			<li>Stay Hydrated all day and during workout also.</li>
+			<li>Have a good meal with protein (before 30 minutes).</li>
+			<li>Warm up.</li>
+			<li>Make sure you're wearing the right clothes and footwear for the workout you're doing.</li>
+			</ul>
+		<h3>Things to do during workout</h3>
+		<ul>
+			<li>Good pair of headphones and a energy-filled playlist. </li>
+			<li>Breathing control.</li>
+			<li>Stay hydrated. </li>
+			<li>Use fresh towel to clean sweat.</li>
+		</ul>
+		<h3>Things to do after workout</h3>
+		<ul>
+			<li>Stretch it out.</li>
+			<li>Refuel with post-workout nutrition.</li>
+			<li>Consider a cool shower, especially if you worked out in the heat.(after 30 minutes)</li>
+			<li>Track your progress.</li>
+		</ul><hr>
+		<h3>Equipments</h3>
+		<p>You can either join a gym or you can train at home, now first few months stick to basics, after that when you are comfortable start weight training exercise. If you want to do it at home you will need some eqipments.<br><br>
+				<img src="https://images-na.ssl-images-amazon.com/images/I/51JLzbzStFL.jpg"  
+				style="height:200px;width:200px; padding-left:10px;"><br>
+				<span style='font-size:50px;'>&#9758;</span><a style="font-size:20px; border:1px solid #111;padding:5px;" href="https://www.amazon.in/dp/B06Y44P871/ref=cm_sw_r_wa_apa_i_ZDurDbC9JBAGF" target="_blank">  Click here</a>
+				<br>
+			<b>Make sure to buy a 3ft and 5ft bar atleast and if you can then a 7ft bar also.</b><br><br>
+			<img src="https://images-na.ssl-images-amazon.com/images/I/41JjZQFdTXL.jpg"  
+				style="height:200px;width:200px; padding-left:10px;"><br>
+				<span style='font-size:50px;'>&#9758;</span><a style="font-size:20px; border:1px solid #111;padding:5px;" href="https://www.amazon.in/BODYFIT-Lifting-Purpose-Adjustable-Incline/dp/B0716KW261/ref=sr_1_16?crid=2OWL4BOAVH2BC&keywords=bench+press+for+home&qid=1564822837&s=sports&sprefix=bench+press%2Csporting%2C289&sr=1-16" target="_blank">  Click here</a><br><br>
+				<img src="https://images-na.ssl-images-amazon.com/images/I/51ZGoZBycUL._SL1000_.jpg"  
+				style="height:200px;width:200px; padding-left:10px;"><br>
+				<span style='font-size:50px;'>&#9758;</span><a style="font-size:20px; border:1px solid #111;padding:5px;" href="https://www.amazon.in/BODY-MAXX-Weight-Straight-Spring/dp/B07B8RLT9F/ref=sr_1_2?keywords=5ft+bar&qid=1564822995&s=sports&sr=1-2" target="_blank">  Click here</a><br><br>
+				<b>You will also need a place to perform pull ups, chin ups and lots of other exercises. </b></p>
+				<h3>You can also train without any equipments but that's training plan will be different</h3><hr>
+				<h2>Exercise</h2>
+				<h3>Beginners(Home Based)</h3>
+			<div style="background-color: #f2f2f2; padding:10px;">
+				<h3>1. Regular Squats</h3>
+				<p>
+					<video class="video"  controls>
+						<source src="video\My ASICS Strength Exercises- Regular Squat.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: Hamstrings</b><br>
+					<ol>
+					<li> Stand with your feet apart, directly under your hips, and place your hands on your hips.</li>
+					
+					<li> Standing up tall, put your shoulders back, lift your chest, and pull in your abdominal muscles.</li>
+					
+					<li> Bend your knees while keeping your upper body as straight as possible, as if you were lowering yourself onto a seat behind you. Lower yourself as far as you can without leaning your upper body more than a few inches forward.</li></ol>
+					<b>Reps :</b> (15-30)<br>
+					<b>Sets :</b> 3<br><br>
+					Tip: Don’t allow your knees to go too far forward. You don’t want them to stick out past your toes.
+					Straighten your legs. Being careful not to lock your knees when you reach a standing position, straighten your legs. Stretch your arms out in front of you for added balance during squats.
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/Screenshot (72).png"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/Screenshot (73).png"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/1.jpg"  style="width:100%">
+				  </div>
+				  </div>
+			</div>
+
+			<div style="background-color: #fff; padding:10px;">
+				<h3>2. Calf Raises</h3>
+				<p>
+					<video class="video"  controls>
+						<source src="video\How to Do Bodyweight Calf Raises.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: Calf </b><br>
+					<ol>
+					<li> Stand on the edge of a step(Like stairs).</li>
+					
+					<li> Stand tall with your abdominals pulled in, the balls of your feet firmly planted on the step, and your heels hanging over the edge. Rest your hands against a wall or a sturdy object for balance.</li>
+					
+					<li> Raise your heels a few inches above the edge of the step so that you’re on your tiptoes.</li>
+					<li>Hold the position for a moment, and then lower your heels below the platform, feeling a stretch in your calf muscles.</li></ol>
+					<b>Reps :</b> (15-30)<br>
+					<b>Sets :</b> 3<br><br>
+					Tip: Lift as high as you can onto your toes and lower your heels down as much as your ankle flexibility allows. Push evenly through the entire width of your foot. Don’t push off from your big toe or the outside edge of your feet.
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/2.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/3.jpg"  style="width:100%">
+				  </div>
+				  </div>
+			</div>
+			<div style="background-color: #f2f2f2; padding:10px;">
+				<h3>3. Pull Ups</h3>
+				<p>
+					<video class="video"  controls style="height:230px">
+						<source src="video\pullups.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: back and arm </b><br>
+					<ol>
+					<li> Grip the bar with both hands, shoulder width apart, and your palms facing away from you.</li>
+					<li> Hang with arms and elbows fully locked out.</li>
+					<li> Pull yourself up, chin over the bar.</li>
+					<li>Keep your back tight, relax your neck and bring your shoulders away from the ears. Engage your core throughout.</li>
+					<li>Lower yourself slowly and controlled until your arms are fully extended and straight again.</li>
+					</ol>
+					<b>Reps :</b> (15-20)<br>
+					<b>Sets :</b> 3<br><br>
+					
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/5.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/6.jpg"  style="width:100%">
+				  </div>
+				  </div>
+			</div>
+			<div style="background-color: #fff; padding:10px;">
+				<h3>4. Superman</h3>
+				<p>
+					<video class="video"  controls muted>
+						<source src="video\superman.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: back</b><br>
+					<ol>
+					<li> To begin, lie straight and face down on the floor or exercise mat. Your arms should be fully extended in front of you. This is the starting position.</li>
+					<li> Simultaneously raise your arms, legs, and chest off of the floor and hold this contraction for 2 seconds. </li>
+					<li> Slowly begin to lower your arms, legs and chest back down to the starting position while inhaling.</li>
+					<li>Repeat for the recommended amount of repetitions prescribed in your program.</li>
+					
+					</ol>
+					<b>Reps :</b> 12-15(hold for 2 sec)<br>
+					<b>Sets :</b> 3<br><br>
+					
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/7.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/guide-5.gif"  style="width:100%">
+				  </div>
+				  </div>
+			</div>
+			<div style="background-color: #f2f2f2; padding:10px;">
+				<h3>5. Push Ups</h3>
+				<p>
+					<video class="video"  controls>
+						<source src="video\pushups.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: Chest & back </b><br>
+					<ol>
+					<li> Get down on the ground. Lay with your toes on the ground holding yourself up with your hands. Lower your torso to the ground until your elbows reach a 90-degree angle. Keep your elbows close to your body for more resistance. Keep your head facing forward. Try to have the tip of your nose pointed directly ahead. Keep your body in a flat plank—do not drop your hips, and do not have your butt hanging in the air. It is important to keep your body as straight as possible. Remember to breathe as you lower yourself.
+					When doing push-ups, your chest should come within inches of the ground each time you go down for a rep. Remember to keep your body at a flat level.</li>
+					
+					<li> Raise yourself by pushing the ground away from you. Breathe out as you push. The power for that push will come from your shoulders and chest working in unison. The triceps (the muscle on the back side of your upper arm) are also contracted but they aren't the primary muscle group being used. Don't be tempted to use your rear end or your stomach. Continue to exert force until your arms are almost in a straight position again, make sure to not lock your arms.</li>
+					
+					<li> Repeat lowering and raising at a steady pace. Each pair counts as a single push up. Do this until you finish your set or you hit your maximum.</li>
+					</ol>
+					<b>Reps :</b> (15-20)<br>
+					<b>Sets :</b> 3<br><br>
+					<h4>Try close grip(shoulder width apart) and wide arm pushups also</h4>
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/Ryan-Push-Up.png"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/pushups.png"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/4.png"  style="width:100%">
+				  </div>
+				  </div>
+			</div>
+			<div style="background-color: #fff; padding:10px;">
+				<h3>6. Hanging Leg Raises</h3>
+				<p>
+					<video class="video"  controls style="height:230px">
+						<source src="video\legraise.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: core </b><br>
+					<ol>
+					<li> While holding onto a chin-up bar raising an overhand grip, hang with your knees bent slightly.</li>
+					
+					<li> Pull your hips up as you curl inward toward your chest using the muscles of your lower abs. Life your knees as close to your chest as possible, rounding your lower back at the top. Then, pause, feel the contraction in your lower-abdominal muscles, and return to the position you began with.</li>
+					</ol>
+					<b>Reps :</b> (10-15)<br>
+					<b>Sets :</b> 3<br><br>
+					
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/9.png"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/8.png"  style="width:100%">
+				  </div>
+				  </div>
+			</div>
+			<div style="background-color: #f2f2f2; padding:10px;">
+				<h3>7. Sit Ups</h3>
+				<p>
+					<video class="video"  controls>
+						<source src="video\situps.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: core </b><br>
+					<ol>
+					<li> Start by lying on your back with your knees bent. Sit ups work best if you do them on a soft surface, such as a mattress. Keep your knees bent at a 90-degree angle, with your feet flat on the floor.</li>
+					
+					<li> Put your fingertips on the back of your ears. Your elbows should be bent and pointing out at your sides. Cupping the back of your ears with your fingertips — as opposed to placing them on the back of your head — can help prevent you from pulling yourself up by your neck as you’re doing sit ups.</li>
+					<li>Lift your torso up as close to your thighs as possible. Do this with a smooth, steady motion, keeping your feet flat on the floor. When you’re done lifting your torso, your lower back should be off the floor.</li>
+					<li>Lower your torso down to the floor so you’re back in the starting position. Like you did when you lifted your torso up to your thighs, use a smooth and steady motion as you lower it down.</li>
+					</ol>
+					<b>Reps :</b> (10-15)<br>
+					<b>Sets :</b> 3<br><br>
+					
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/Screenshot (76).png"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/Screenshot (77).png"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/8.png"  style="width:100%">
+				  </div>
+				  </div>
+			</div>
+			<div style="background-color: #fff; padding:10px;">
+				<h3>8. plank</h3>
+				<p>
+					<video class="video"  controls muted>
+						<source src="video\plank.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: abdominals, back & shoulders </b><br>
+					<ol>
+					<li> Being face down resting your weight on your forearms and toes and pull your abs in tight. </li>
+					
+					<li> Maintain a hold where your body is in a straight line from shoulders to heels for as long as possible.
+					</li>
+					</ol>
+					Tips: Keep a straight back and don't allow your hips to sag throughout the exercise hold. Try the 'RKC plank'. In this variation you don't just hold the position, you seriously squeeze your abs, glutes, quads, lats, etc.<br><br>
+					<b>Hold 1-2 minutes</b><br>
+					</p>
+				<div  class="clearfix" style="padding-top:30px;">
+				  <div class="video-img">
+				  <img src="video img/plank-man.png"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/plank-woman.png"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/8.jpg"  style="width:100%">
+				  </div>
+				  </div>
+			</div>
+			<h3>Intermediate(Home Based)</h3>
+			<b>You need to understand the split concept for this level</b><br><br>
+			<ul>
+			<li><h4>Push Split</h4>
+			<ol>
+				<li>Shoulder</li>
+				<li>Chest</li>
+				<li>Tricep</li>
+			</ol></li>
+			<li><h4>Pull Split</h4>
+			<ol>
+				<li>Back</li>
+				<li>Biceps</li>
+			</ol></li>
+			<li><h4>Abs & Legs</h4></li>
+		</ul>
+			<table id="customers2">
+				<tr>
+					<th>Day</th>
+					<th>Split</th>
+				</tr>
+				<tr>
+					<td>Monday</td>
+					<td>Push</td>
+				</tr>
+				<tr>
+					<td>Tuesday</td>
+					<td>Pull</td>
+				</tr>
+				<tr>
+					<td>Wednesday</td>
+					<td>Abs & Legs</td>
+				</tr>
+				<tr>
+					<td>Thursday</td>
+					<td>Push</td>
+				</tr>
+				<tr>
+					<td>Friday</td>
+					<td>Pull</td>
+				</tr>
+				<tr>
+					<td>Saturday</td>
+					<td>Abs & Legs</td>
+				</tr>
+				<tr>
+					<td>Sunday</td>
+					<td>Rest day</td>
+				</tr>
+			</table>
+			<h2>Push Day</h2>
+			<h3>Chest</h3>
+			
+			<div style="background-color: #fff; padding:10px;">
+				<h3>1. Push Ups(shoulder width apart)</h3>
+				<p>
+					<video class="video"  controls>
+						<source src="video\pushups.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: Inner Chest </b><br>
+					<ol>
+					<li> Get down on the ground. Lay with your toes on the ground holding yourself up with your hands. Lower your torso to the ground until your elbows reach a 90-degree angle. Keep your elbows close to your body for more resistance. Keep your head facing forward. Try to have the tip of your nose pointed directly ahead. Keep your body in a flat plank—do not drop your hips, and do not have your butt hanging in the air. It is important to keep your body as straight as possible. Remember to breathe as you lower yourself.
+					When doing push-ups, your chest should come within inches of the ground each time you go down for a rep. Remember to keep your body at a flat level.</li>
+					
+					<li> Raise yourself by pushing the ground away from you. Breathe out as you push. The power for that push will come from your shoulders and chest working in unison. The triceps (the muscle on the back side of your upper arm) are also contracted but they aren't the primary muscle group being used. Don't be tempted to use your rear end or your stomach. Continue to exert force until your arms are almost in a straight position again, make sure to not lock your arms.</li>
+					
+					<li> Repeat lowering and raising at a steady pace. Each pair counts as a single push up. Do this until you finish your set or you hit your maximum.</li>
+					</ol>
+					<b>Reps :</b> (20-30)<br>
+					<b>Sets :</b> 3-4<br><br>
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/Ryan-Push-Up.png"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/pushups.png"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/4.png"  style="width:100%">
+				  </div>
+				  </div>
+			</div>
+			<div style="background-color: #f2f2f2; padding:10px;">
+				<h3>2. Push Ups(Wide arm)</h3>
+				<p>
+					<video class="video"  controls>
+						<source src="video\widearm.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: Middle Chest </b><br>
+					<ol>
+					<li> Start in a plank position but with your hands out wider than your shoulders.</li>
+					
+					<li> Begin to lower your body by bending your elbows, keeping your core tight and your back flat, until your chest grazes the floor. Elbows will flare more than in a standard pushup.</li>
+					
+					<li> Immediately extend your elbows and push your body back up.</li>
+
+					</ol>
+					<b>Reps :</b> (20-30)<br>
+					<b>Sets :</b> 3-4<br><br>
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/woman-doing-wide-pushups.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/wide.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/4.png"  style="width:100%">
+				  </div>
+				  </div>
+			</div>
+			<div style="background-color: #fff; padding:10px;">
+				<h3>3. Dumbbell Flyes Floor</h3>
+				<p>
+					<video class="video"  controls>
+						<source src="video\dumfloor.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: Middle Chest</b><br>
+					<ol>
+					<li> Lie down on a flat bench/floor with a dumbbell on each hand resting on top of your thighs. The palms of your hand will be facing each other.</li>
+					
+					<li> Then using your thighs to help raise the dumbbells, lift the dumbbells one at a time so you can hold them in front of you at shoulder width with the palms of your hands facing each other. Raise the dumbbells up like you're pressing them, but stop and hold just before you lock out. This will be your starting position.</li>
+					
+					<li> With a slight bend on your elbows in order to prevent stress at the biceps tendon, lower your arms out at both sides in a wide arc until you feel a stretch on your chest. Breathe in as you perform this portion of the movement.</li>
+					<li>Return your arms back to the starting position as you squeeze your chest muscles and breathe out.</li>
+					<li>Hold for a second at the contracted position and repeat the movement for the prescribed amount of repetitions.</li>
+					</ol>
+					Tips: Keep in mind that throughout the movement, the arms should remain stationary; the movement should only occur at the shoulder joint. Make sure to use the same arc of motion used to lower the weights.<br><br>
+					<b>Reps :</b> (10-15)<br>
+					<b>Sets :</b> 3<br><br>
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/dumfloor.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/dumfloor1.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/guide-1.gif"  style="width:100%">
+				  </div>
+				  </div>
+			</div>
+			<div style="background-color: #f2f2f2; padding:10px;">
+				<h3>4. Incline Push-Up </h3>
+				<p>
+					<video class="video"  controls style="height:230px">
+						<source src="video\incline.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: upper Chest</b><br>
+					<ol>
+					<li> Stand facing bench or sturdy elevated platform. Place hands on edge of bench or platform, slightly wider than shoulder width.</li>
+					<li> Position forefoot back from bench or platform with arms and body straight. Arms should be perpendicular to body. Keeping body straight, lower chest to edge of box or platform by bending arms.</li>
+					<li> Push body up until arms are extended. Repeat.</li>
+					</ol>
+					<b>Reps :</b> (15-20)<br>
+					<b>Sets :</b> 3-4<br><br>
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/Screenshot (78).png"  style="width:70%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/Screenshot (79).png"  style="width:70%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/upperchest.png"  style="width:70%">
+				  </div>
+				  </div>
+			</div>
+			<div style="background-color: #fff; padding:10px;">
+				<h3>5. Decline Push-Up </h3>
+				<p>
+					<video class="video"  controls style="height:230px">
+						<source src="video\108.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: upper Chest</b><br>
+					<ol>
+					<li> Lie on the floor face down and place your hands about 36 inches apart while holding your torso up at arms length. Move your feet up to a box or bench. This will be your starting position.</li>
+					<li> Next, lower yourself downward until your chest almost touches the floor as you inhale.</li>
+					<li> Now breathe out and press your upper body back up to the starting position while squeezing your chest.
+					</li>
+					<li>After a brief pause at the top contracted position, you can begin to lower yourself downward again for as many repetitions as needed.</li>
+					</ol>
+					<b>Reps :</b> (15-20)<br>
+					<b>Sets :</b> 3-4<br><br>
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/Screenshot (80).png"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/Screenshot (81).png"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/upperchest.png"  style="width:70%">
+				  </div>
+				  </div>
+			</div>
+			<div style="background-color: #f2f2f2; padding:10px;">
+				<h3>6. Dumbell Push Ups </h3>
+				<p>
+					<video class="video"  controls style="height:200px">
+						<source src="video\111.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: lower Chest</b><br>
+					<ol>
+					<li> Get into pushup position with your arms straight and your hands resting on light dumbbells. </li>
+					<li> Lower your body to the floor by placing a bend in your elbows and keeping your back straight. </li>
+					<li> Push yourself back up untill your arms are straight and elbows unlocked. Then repeat. </li>
+					</ol>
+					<b>Reps :</b> (15-20)<br>
+					<b>Sets :</b> 3-4<br><br>
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/11.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/12.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/cable-ring-exercise-1.jpg"  style="width:70%">
+				  </div>
+				  </div>
+			</div>
+			<div style="background-color: #fff; padding:10px;">
+				<h3>7. Dips </h3>
+				<p>
+					<video class="video"  controls style="height:200px">
+						<source src="video\40.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: lower Chest</b><br>
+					<ol>
+					<li> Grab the parallel bars and jump up, straighten your arms. </li>
+					<li> Lower your body by bending your arms while leaning forward.  </li>
+					<li> Dip down until your shoulders are below your elbows. </li>
+					<li>Lift your body up by straightening your arms. /</li>
+					<li>Lock your elbows at the top. </li>
+					</ol>
+					<b>Reps :</b> (15-20)<br>
+					<b>Sets :</b> 3<br><br>
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/Chest-Dips-.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/how-to-do-tricep-dips.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/cable-ring-exercise-1.jpg"  style="width:70%">
+				  </div>
+				  </div>
+			</div>
+			<h3 style="background-color:#ccc; padding:10px;">Bench press(incline, decline, normal) is best to develop chest but if you have not bought the bench then stick to this routine. </h3><hr>
+<!--from here-->
+			<h3>Triceps</h3>
+			<div style="background-color: #f2f2f2; padding:10px;">
+				<h3>1. Diamond Push Ups</h3>
+				<p>
+					<video class="video"  controls style="height:230px">
+						<source src="video\142.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: Chest & Triceps(mostly) </b><br>
+					<ol>
+					<li> Get in the modified push-up position on your knees but with your hands together and back flat. Spread your fingers so that your index fingers and thumbs form a diamond, and extend your arms. This is your start position.</li>
+					
+					<li> Allow your elbows to break, lowering your chest toward the floor while keeping your back flat.</li>
+					
+					<li> Press back up to full arm extension, repeating for the required number of reps.</li>
+					<li>To make the movement more difficult, stay up on your toes rather than on your knees.</li>
+
+					</ol>
+					<b>Reps :</b> (10-20)<br>
+					<b>Sets :</b> 3<br><br>
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/13.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/14.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/123.png"  style="width:100%">
+				  </div>
+				  </div>
+			</div>
+			<div style="background-color: #fff; padding:10px;">
+				<h3>2. Standing Dumbbell Triceps Extension</h3>
+				<p>
+					<video class="video"  controls style="height:230px">
+						<source src="video\tri.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: Triceps </b><br>
+					<ol>
+					<li> To begin, stand up with a dumbbell held by both hands. Your feet should be about shoulder width apart from each other. Slowly use both hands to grab the dumbbell and lift it over your head until both arms are fully extended.</li>
+					<li> The resistance should be resting in the palms of your hands with your thumbs around it. The palm of the hands should be facing up towards the ceiling. This will be your starting position.</li>
+					<li> Keeping your upper arms close to your head with elbows in and perpendicular to the floor, lower the resistance in a semicircular motion behind your head until your forearms touch your biceps.</li>
+					<li>Go back to the starting position by using the triceps to raise the dumbbell. Breathe out as you perform this step.</li>
+					</ol>
+					Tip: The upper arms should remain stationary and only the forearms should move. Breathe in as you perform this step.<br><br>
+					<b>Reps :</b> (8-15)<br>
+					<b>Sets :</b> 3-4<br><br>
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/Screenshot (82).png"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/Screenshot (83).png"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/tricep.png"  style="width:100%">
+				  </div>
+				  </div>
+			</div>
+			<div style="background-color: #f2f2f2; padding:10px;">
+				<h3>3. Decline EZ Bar Triceps Extension</h3>
+				<p>
+					<b>barbell</b> = 3ft or 5ft<br>
+					You can use a straight bar or dumbbells to perform this movement. You can also perform it on a flat bench as well.<br><br>
+					<video class="video"  controls style="height:230px">
+						<source src="video\ez.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: Triceps </b><br>
+					<ol>
+					<li> Secure your legs at the end of the decline bench and slowly lay down on the bench.</li>
+					<li> Using a close grip (a grip that is slightly less than shoulder width), lift the EZ bar from the rack and hold it straight over you with your arms locked and elbows in. The arms should be perpendicular to the floor. This will be your starting position. </li>
+					<li> As you breathe in and you keep the upper arms stationary, bring the bar down slowly by moving your forearms in a semicircular motion towards you until you feel the bar slightly touch your forehead. Breathe in as you perform this portion of the movement.</li>
+					<li> Lift the bar back to the starting position by contracting the triceps and exhaling.</li>
+					</ol>
+					Tip: In order to protect your rotator cuff, it is best if you have a spotter help you lift the barbell off the rack.<br><br>
+					<b>Reps :</b> (8-15)<br>
+					<b>Sets :</b> 3-4<br><br>
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/16.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/15.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/tricep.png"  style="width:100%">
+				  </div>
+				  </div>
+			</div>
+			<div style="background-color: #fff; padding:10px;">
+				<h3>4. Triceps KickBacks </h3>
+				<p>
+					<video class="video"  controls style="height:230px">
+						<source src="video\76.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: Triceps </b><br>
+					<ol>
+					<li>Kneel comfortably on a bench with the same leg that you hold the weight with. Now with your back straight and your head looking straight ahead start with the weight at a 90 degree angle.</li>
+					<li> Extend the weight keeping your elbow completely stationary.</li>
+					</ol>
+					Tip: In order to protect your rotator cuff, it is best if you have a spotter help you lift the barbell off the rack.<br><br>
+					<b>Reps :</b> (12-15)<br>
+					<b>Sets :</b> 3-4<br><br>
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/Screenshot (84).png"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/Screenshot (85).png"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/tricep.png"  style="width:100%">
+				  </div>
+				  </div>
+			</div>
+			<div style="background-color: #f2f2f2; padding:10px;">
+				<h3>5. Bench Dips </h3>
+				<p>
+					You can place your legs on top of another flat bench in front of you in order to make the exercise more challenging. If that variation also becomes easy, then you can have a partner place plates on top of your lap. Make sure that in this case the partner ensures that the weights stay there throughout the movement.<br><br>
+					<video class="video"  controls style="height:230px">
+						<source src="video\80.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: Triceps </b><br>
+					<ol>
+					<li>For this exercise you will need to place a bench behind your back. With the bench perpendicular to your body, and while looking away from it, hold on to the bench on its edge with the hands fully extended, separated at shoulder width. The legs will be extended forward, bent at the waist and perpendicular to your torso. This will be your starting position.</li>
+					<li> Slowly lower your body as you inhale by bending at the elbows until you lower yourself far enough to where there is an angle slightly smaller than 90 degrees between the upper arm and the forearm. </li>
+					<li> Using your triceps to bring your torso up again, lift yourself back to the starting position.</li>
+					
+					</ol>
+					Tip: In order to protect your rotator cuff, it is best if you have a spotter help you lift the barbell off the rack. Keep the elbows as close as possible throughout the movement. Forearms should always be pointing down.<br><br>
+					<b>Reps :</b> (15-20)<br>
+					<b>Sets :</b> 3<br><br>
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/Screenshot (86).png"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/Screenshot (87).png"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/tricep.png"  style="width:100%">
+				  </div>
+				  </div>
+			</div>
+			<div style="background-color: #fff; padding:10px;">
+				<h3>6. Standing Overhead Barbell Triceps Extension </h3>
+				<p>
+					<b>barbell</b> = 3ft or 5ft<br>
+					Another way to perform this exercise is to use dumbbells or a triceps blaster bar. You can also use cables with a bar or rope attachment.<br><br>
+					<video class="video"  controls style="height:230px">
+						<source src="video\78.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: Triceps </b><br>
+					<ol>
+					<li> To begin, stand up holding a barbell or e-z bar using a pronated grip (palms facing forward) with your hands closer than shoulder width apart from each other. Your feet should be about shoulder width apart.</li>
+					<li> Now elevate the barbell above your head until your arms are fully extended. Keep your elbows in. This will be your starting position.</li>
+					<li> Keeping your upper arms close to your head and elbows in, perpendicular to the floor, lower the resistance in a semicircular motion behind your head until your forearms touch your biceps.</li>
+					<li>Go back to the starting position by using the triceps to raise the barbell. Breathe out as you perform this step.</li>
+					</ol>
+					Tip: The upper arms should remain stationary and only the forearms should move. Breathe in as you perform this step.<br><br>
+					<b>Reps :</b> (8-15)<br>
+					<b>Sets :</b> 3-4<br><br>
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/17.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/18.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/tricep.png"  style="width:100%">
+				  </div>
+				  </div>
+			</div><hr>
+			<!--here-->
+			<h3>Shoulders</h3>
+			<div style="background-color: #f2f2f2; padding:10px;">
+				<h3>1. Seated Dumbbell Shoulder Press </h3>
+				<p>
+					<video class="video"  controls style="height:230px">
+						<source src="video\136.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: Shoulder </b><br>
+					<ol>
+					<li> Grab a couple of dumbbells and sit on a military press bench or a utility bench that has a back support on it as you place the dumbbells upright on top of your thighs.</li>
+					<li> Clean the dumbbells up one at a time by using your thighs to bring the dumbbells up to shoulder height at each side.</li>
+					<li> Rotate the wrists so that the palms of your hands are facing forward. This is your starting position.
+					</li>
+					<li> As you exhale, push the dumbbells up until they touch at the top. After a second pause, slowly come down back to the starting position as you inhale.</li>
+					</ol>
+					<b>Reps :</b> (12-15)<br>
+					<b>Sets :</b> 3<br><br>
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/19.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/20.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/1234.png"  style="width:100%">
+				  </div>
+				  </div>
+			</div>
+			<div style="background-color: #fff; padding:10px;">
+				<h3>2. Seated Arnold Dumbbell Press </h3>
+				<p>
+					<video class="video"  controls style="height:230px">
+						<source src="video\132.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: Shoulder </b><br>
+					<ol>
+					<li> Sit on an exercise bench with back support and hold two dumbbells in front of you at about upper chest level with your palms facing your body and your elbows bent. </li>
+					<li> Now to perform the movement, raise the dumbbells as you rotate the palms of your hands until they are facing forward.</li>
+					<li> Continue lifting the dumbbells until your arms are extended above you in straight arm position. Breathe out as you perform this portion of the movement.</li>
+					<li> After a second pause at the top, begin to lower the dumbbells to the original position by rotating the palms of your hands towards you.</li>
+					</ol>
+					Tip: Your arms should be next to your torso. The starting position should look like the contracted portion of a dumbbell curl. The left arm will be rotated in a counter clockwise manner while the right one will be rotated clockwise. Breathe in as you perform this portion of the movement.<br><br>
+					<b>Reps :</b> (12-15)<br>
+					<b>Sets :</b> 3<br><br>
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/21.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/22.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/1234.png"  style="width:100%">
+				  </div>
+				  </div>
+			</div>
+			<div style="background-color: #f2f2f2; padding:10px;">
+				<h3>3. Barbell Front Raises </h3>
+				<p>
+					<b>barbell</b> = 3ft or 5ft<br>
+					<video class="video"  controls style="height:230px">
+						<source src="video\68.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: Shoulder </b><br>
+					<ol>
+					<li> Stand with your legs slightly spread. Take and overhand grip on barbell and rest the barbell on your thighs.</li>
+					<li> Keep your back straight and your abdominals contracted.</li>
+					<li> Inhale and raise the barbell forward with your arm straight untill it reaches eye level.</li>
+					<li> Exhale as you return back to your starting posititon. </li>
+					</ol>
+					<b>Reps :</b> (12-15)<br>
+					<b>Sets :</b> 3<br><br>
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/23.jpg"  style="width:100%">
+				  </div>
+				 <div class="video-img">
+				  <img src="video img/1234.png"  style="width:100%">
+				  </div>
+				  </div>
+			</div>
+			<div style="background-color: #fff; padding:10px;">
+				<h3>4. Dumbbell Lateral Raise </h3>
+				<p>
+					<video class="video"  controls style="height:230px">
+						<source src="video\66.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: Shoulder </b><br>
+					<ol>
+					<li> Stand up with your torso upright and a dumbbell on each hand being held at arms length. The elbows should be close to the torso.</li>
+					<li> The palms of the hands should be facing your torso. Your feet should be about shoulder width apart. This will be your starting position.</li>
+					<li> Keeping your arms straight and the torso stationary, lift the weights out to your sides until they are about shoulder level height while exhaling.</li>
+					<li> Feel the contraction for a second and begin to lower the weights back down to the starting position while inhaling. </li>
+					</ol>
+					Tip: Keep the palms facing down with the little finger slightly higher while lifting and lowering the weights as it will concentrate the stress on your shoulders mainly.<br><br>
+					<b>Reps :</b> (12-15)<br>
+					<b>Sets :</b> 3<br><br>
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/24.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/25.jpg"  style="width:100%">
+				  </div>
+				 <div class="video-img">
+				  <img src="video img/1234.png"  style="width:100%">
+				  </div>
+				  </div>
+			</div>
+			<div style="background-color: #f2f2f2; padding:10px;">
+				<h3>5. Standing Military Press </h3>
+				<p>
+					<b>barbell</b> = 5ft or 7ft<br>
+					<video class="video"  controls muted style="height:230px">
+						<source src="video\barbell.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: Shoulder </b><br>
+					<ol>
+					<li> Start by placing a barbell that is about chest high on a squat rack. Once you have selected the weights, grab the barbell using a pronated (palms facing forward) grip. Make sure to grip the bar wider than shoulder width apart from each other.</li>
+					<li> Slightly bend the knees and place the barbell on your collar bone. Lift the barbell up keeping it lying on your chest. Take a step back and position your feet shoulder width apart from each other.</li>
+					<li> Once you pick up the barbell with the correct grip length, lift the bar up over your head by locking your arms. Hold at about shoulder level and slightly in front of your head. This is your starting position.
+					</li>
+					<li> Lower the bar down to the collarbone slowly as you inhale. Lift the bar back up to the starting position as you exhale. </li>
+					</ol>
+					Tip: Keep the palms facing down with the little finger slightly higher while lifting and lowering the weights as it will concentrate the stress on your shoulders mainly.<br><br>
+					<b>Reps :</b> (12-15)<br>
+					<b>Sets :</b> 3<br><br>
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/26.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/27.jpg"  style="width:100%">
+				  </div>
+				 <div class="video-img">
+				  <img src="video img/1234.png"  style="width:100%">
+				  </div>
+				  </div>
+			</div><hr>
+	<!--push split complete-->
+			<h2>Pull Day</h2>
+			<h3>Back</h3>
+			<div style="background-color: #fff; padding:10px;">
+				<h3>1. Pull Ups</h3>
+				<p>
+					<video class="video"  controls style="height:230px">
+						<source src="video\pullups.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: back and arm </b><br>
+					<ol>
+					<li> Grip the bar with both hands, shoulder width apart, and your palms facing away from you.</li>
+					<li> Hang with arms and elbows fully locked out.</li>
+					<li> Pull yourself up, chin over the bar.</li>
+					<li>Keep your back tight, relax your neck and bring your shoulders away from the ears. Engage your core throughout.</li>
+					<li>Lower yourself slowly and controlled until your arms are fully extended and straight again.</li>
+					</ol>
+					<b>Reps :</b> (15-20)<br>
+					<b>Sets :</b> 3<br><br>
+					
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/5.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/6.jpg"  style="width:100%">
+				  </div>
+				  </div>
+			</div>
+			<div style="background-color: #f2f2f2; padding:10px;">
+				<h3>2. Deadlift</h3>
+				<p>
+					<span style="color:red">(If you don't perform deadlift with correct method or posture you will get very bad back injury. So be very cautious)</span><br><br>
+					<b>barbell</b> = 7ft<br>
+					<video class="video"  controls style="height:230px">
+						<source src="video\16.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: Lower back </b><br>
+					<ol>
+					<li> Begin by having a platform or weight plates that you can stand on, usually 1-3 inches in height. Approach the bar so that it is centered over your feet. You feet should be about hip width apart. Bend at the hip to grip the bar at shoulder width, allowing your shoulder blades to protract. Typically, you would use an overhand grip or an over/under grip on heavier sets.</li>
+					<li> With your feet, and your grip set, take a big breath and then lower your hips and bend the knees until your shins contact the bar. Look forward with your head, keep your chest up and your back arched, and begin driving through the heels to move the weight upward. After the bar passes the knees, aggressively pull the bar back, pulling your shoulder blades together as you drive your hips forward into the bar.</li>
+					<li> Lower the bar by bending at the hips and guiding it to the floor.</li>
+					
+					</ol>
+					<b>Reps :</b> (10-15)<br>
+					<b>Sets :</b> 3<br><br>
+					
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/28.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/29.jpg"  style="width:100%">
+				  </div>
+				   <div class="video-img">
+				  <img src="video img/deadlift.png"  style="width:100%">
+				  </div>
+				  </div>
+			</div>
+			<div style="background-color: #fff; padding:10px;">
+				<h3>3. Barbell Row.</h3>
+				<p>
+					<span style="color:red">(This exercise is not recommended for people with back problems. A Low Pulley Row is a better choice for people with back issues. Also, just like with the bent knee dead-lift, if you have a healthy back, ensure perfect form and never slouch the back forward as this can cause back injury. Be cautious as well with the weight used; in case of doubt, use less weight rather than more.)</span><br><br>
+					<b>barbell</b> = 7ft<br>
+					<video class="video"  controls style="height:230px">
+						<source src="video\23.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: Middle back </b><br>
+					<ol>
+					<li> Holding a barbell with a pronated grip (palms facing down), bend your knees slightly and bring your torso forward, by bending at the waist, while keeping the back straight until it is almost parallel to the floor. Tip: Make sure that you keep the head up. The barbell should hang directly in front of you as your arms hang perpendicular to the floor and your torso. This is your starting position.</li>
+					<li> Now, while keeping the torso stationary, breathe out and lift the barbell to you. Keep the elbows close to the body and only use the forearms to hold the weight. At the top contracted position, squeeze the back muscles and hold for a brief pause.</li>
+					<li> Then inhale and slowly lower the barbell back to the starting position.</li>
+					
+					</ol>
+					<b>Reps :</b> (10-15)<br>
+					<b>Sets :</b> 3<br><br>
+					
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/30.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/31.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/bentrow.png"  style="width:100%">
+				  </div>
+				  </div>
+			</div>
+			<div style="background-color: #f2f2f2; padding:10px;">
+				<h3>4. One-Arm Dumbbell Row</h3>
+				<p>
+					<video class="video"  controls style="height:230px">
+						<source src="video\19.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: Middle back </b><br>
+					<ol>
+					<li> Choose a flat bench and place a dumbbell on each side of it.</li>
+					<li> Place the right leg on top of the end of the bench, bend your torso forward from the waist until your upper body is parallel to the floor, and place your right hand on the other end of the bench for support.
+					</li>
+					<li> Use the left hand to pick up the dumbbell on the floor and hold the weight while keeping your lower back straight. The palm of the hand should be facing your torso. This will be your starting position.</li>
+					<li>Pull the resistance straight up to the side of your chest, keeping your upper arm close to your side and keeping the torso stationary. Breathe out as you perform this step. </li>
+					<li> Lower the resistance straight down to the starting position. Breathe in as you perform this step.</li>
+					<li> Repeat the movement for the specified amount of repetitions. Switch sides and repeat again with the other arm.</li>
+					</ol>
+					<b>Reps :</b> (12-15)<br>
+					<b>Sets :</b> 3<br><br>
+					
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/32.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/33.jpg"  style="width:100%">
+				  </div>
+				   <div class="video-img">
+				  <img src="video img/onearm.jpg"  style="width:100%">
+				  </div>
+				  </div>
+			</div>
+			<div style="background-color: #fff; padding:10px;">
+				<h3>5. Seated Bent Over Row</h3>
+				<p>
+					<video class="video"  controls style="height:230px">
+						<source src="video\Seated DB Bent Row.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: Middle back </b><br>
+					<ol>
+					<li> Sit on the end of a bench with your knees bent, feet flat on the floor and place a pair of dumbbells on the floor at your sides. Bend forward at your waist as far as you can untill your back is almost parallel to the floor, your chest should touch your legs. Reach down, grab a weight in each hand, and let your arms hang straight down. </li>
+					<li> Turn the weights so the palms face in. </li>
+					<li> Without moving anything but your arms, slowly pull the dumbbells up close to your body to the sides of your chest. </li>
+					<li> Hold for a second, then lower the weights back down. </li>
+					</ol>
+					<b>Reps :</b> (12-15)<br>
+					<b>Sets :</b> 3<br><br>
+					
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/sd.png"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/sd2.png"  style="width:100%">
+				  </div>
+				   <div class="video-img">
+				  <img src="video img/onearm.jpg"  style="width:100%">
+				  </div>
+				  </div>
+			</div>
+			<div style="background-color: #f2f2f2; padding:10px;">
+				<h3>6. Barbell Shrug</h3>
+				<p>
+					<b>barbell</b> = 5ft-7ft<br>
+					<video class="video"  controls style="height:230px">
+						<source src="video\20.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: Trap </b><br>
+					<ol>
+					<li> Stand up straight with your feet at shoulder width as you hold a barbell with both hands in front of you using a pronated grip (palms facing the thighs). </li>
+					<li> Raise your shoulders up as far as you can go as you breathe out and hold the contraction for a second. 
+					</li>
+					<li> Slowly return to the starting position as you breathe in.</li>
+					</ol>
+					Tip: Your hands should be a little wider than shoulder width apart. You can use wrist wraps for this exercise for a better grip. This will be your starting position. Refrain from trying to lift the barbell by using your biceps.<br><br>
+					<b>Reps :</b> (12-15)<br>
+					<b>Sets :</b> 3<br><br>
+					
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/34.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/35.jpg"  style="width:100%">
+				  </div>
+				   <div class="video-img">
+				  <img src="video img/shrug.png"  style="width:100%">
+				  </div>
+				  </div>
+			</div><hr>
+			<!--biceps training from here-->
+			<h3>Biceps</h3>
+			<div style="background-color: #fff; padding:10px;">
+				<h3>1. Chin Ups</h3>
+				<p>
+					<video class="video"  controls muted style="height:230px">
+						<source src="video\chinup.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: back & Biceps </b><br>
+					<ol>
+					<li> Grip the bar approximately shoulder width apart, with your palms facing away towards you with an underhand/supinated grip. </li>
+					<li> Hang from the bar with your arms extended. Squeeze your shoulder blades together slightly, pulling your shoulders backwards. Imagine you’re trying to squeeze a big orange between your shoulder blades. 
+					</li>
+					<li> Tense your abdominal muscles, drawing your belly button inwards towards your spine. This helps to activate your core, improve your balance, and make sure you’re using the right muscles.</li>
+					<li> Pull yourself up, by closing the elbow joint and squeezing your shoulder blades down and together. You should think of this as starting by putting your shoulder blades in position, using the arms through the middle, then tucking your shoulder blades down at the top of the movement.</li>
+					<li> Pause for a moment at the top and slowly, under control, lower yourself back down to the starting position. The lowering phase should normally take 2 to 3 seconds, and you should stay in-control all the way down.</li>
+					</ol>
+					<b>Reps :</b> (10-15)<br>
+					<b>Sets :</b> 3<br><br>
+					
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/37.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/36.jpg"  style="width:100%">
+				  </div>
+				   
+				  </div>
+			</div>
+			<div style="background-color: #f2f2f2; padding:10px;">
+				<h3>2. Barbell Curl</h3>
+				<p>
+					<b>barbell</b> = 3ft-5ft<br>
+					<video class="video"  controls style="height:230px">
+						<source src="video\26.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: Biceps </b><br>
+					<ol>
+					<li> Stand up with your torso upright while holding a barbell at a shoulder-width grip. The palm of your hands should be facing forward and the elbows should be close to the torso. This will be your starting position. </li>
+					<li> While holding the upper arms stationary, curl the weights forward while contracting the biceps as you breathe out.
+					</li>
+					<li> TContinue the movement until your biceps are fully contracted and the bar is at shoulder level. Hold the contracted position for a second and squeeze the biceps hard.</li>
+					<li> Slowly begin to bring the bar back to starting position as your breathe in.</li>
+					</ol>
+					<b>Reps :</b> (8-15)<br>
+					<b>Sets :</b> 4-6<br><br>
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/Screenshot (92).png"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/Screenshot (93).png"  style="width:100%">
+				  </div>
+				   <div class="video-img">
+				  <img src="video img/bicep.png"  style="width:100%">
+				  </div>
+				  </div>
+			</div>
+			<div style="background-color: #fff; padding:10px;">
+				<h3>3. Dumbbell Curls</h3>
+				<p>
+					<video class="video"  controls style="height:230px">
+						<source src="video\25.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: Biceps </b><br>
+					<ol>
+					<li> Stand up straight with a dumbbell in each hand at arm's length. Keep your elbows close to your torso and rotate the palms of your hands until they are facing forward. This will be your starting position. </li>
+					<li> Now, keeping the upper arms stationary, exhale and curl the weights while contracting your biceps. Continue to raise the weights until your biceps are fully contracted and the dumbbells are at shoulder level. Hold the contracted position for a brief pause as you squeeze your biceps.
+					</li>
+					<li> Then, inhale and slowly begin to lower the dumbbells back to the starting position.</li>
+					</ol>
+					<b>Reps :</b> (8-15)<br>
+					<b>Sets :</b> 4<br><br>
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/Screenshot (94).png"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/Screenshot (95).png"  style="width:100%">
+				  </div>
+				   <div class="video-img">
+				  <img src="video img/bicep.png"  style="width:100%">
+				  </div>
+				  </div>
+			</div>
+			<div style="background-color: #f2f2f2; padding:10px;">
+				<h3>4. Hammer Curls</h3>
+				<p>
+					<video class="video"  controls style="height:230px">
+						<source src="video\28.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: Biceps </b><br>
+					<ol>
+					<li> Stand up with your torso upright and a dumbbell on each hand being held at arms length. The elbows should be close to the torso. </li>
+					<li> The palms of the hands should be facing your torso. This will be your starting position.
+					</li>
+					<li> Now, while holding your upper arm stationary, exhale and curl the weight forward while contracting the biceps. Continue to raise the weight until the biceps are fully contracted and the dumbbell is at shoulder level. Hold the contracted position for a brief moment as you squeeze the biceps.</li>
+					<li>After the brief pause, inhale and slowly begin the lower the dumbbells back down to the starting position.</li>
+					</ol>
+					<b>Reps :</b> (8-15)<br>
+					<b>Sets :</b> 4<br><br>
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/Screenshot (96).png"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/Screenshot (97).png"  style="width:100%">
+				  </div>
+				   <div class="video-img">
+				  <img src="video img/bicep.png"  style="width:100%">
+				  </div>
+				  </div>
+			</div>
+			<div style="background-color: #fff; padding:10px;">
+				<h3>5. Preacher Curl</h3>
+				<p>
+					<b>barbell</b> = 3ft-5ft<br>
+					<video class="video"  controls style="height:230px">
+						<source src="video\27.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: Biceps </b><br>
+					<ol>
+					<li> To perform this movement you will need a preacher bench and an E-Z bar. Grab the E-Z curl bar at the close inner handle (either have someone hand you the bar which is preferable or grab the bar from the front bar rest provided by most preacher benches). The palm of your hands should be facing forward and they should be slightly tilted inwards due to the shape of the bar. </li>
+					<li> With the upper arms positioned against the preacher bench pad and the chest against it, hold the E-Z Curl Bar at shoulder length. This will be your starting position.
+					</li>
+					<li> As you breathe in, slowly lower the bar until your upper arm is extended and the biceps is fully stretched.</li>
+					<li> As you exhale, use the biceps to curl the weight up until your biceps is fully contracted and the bar is at shoulder height. Squeeze the biceps hard and hold this position for a second.</li>
+					</ol>
+					<b>Reps :</b> (8-15)<br>
+					<b>Sets :</b> 4-6<br><br>
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/38.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/39.jpg"  style="width:100%">
+				  </div>
+				   <div class="video-img">
+				  <img src="video img/bicep.png"  style="width:100%">
+				  </div>
+				  </div>
+			</div>
+			<div style="background-color: #f2f2f2; padding:10px;">
+				<h3>6. Concentration Curls</h3>
+				<p>
+					
+					<video class="video"  controls style="height:230px">
+						<source src="video\29.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: Biceps </b><br>
+					<ol>
+					<li> Sit down on a flat bench with one dumbbell in front of you between your legs. Your legs should be spread with your knees bent and feet on the floor. </li>
+					<li> Use your right arm to pick the dumbbell up. Place the back of your right upper arm on the top of your inner right thigh. Rotate the palm of your hand until it is facing forward away from your thigh.</li>
+					<li> While holding the upper arm stationary, curl the weights forward while contracting the biceps as you breathe out. Only the forearms should move. Continue the movement until your biceps are fully contracted and the dumbbells are at shoulder level. </li>
+					<li> Slowly begin to bring the dumbbells back to starting position as your breathe in. Caution: Avoid swinging motions at any time.</li>
+					</ol>
+					Tip: Your arm should be extended and the dumbbell should be above the floor. At the top of the movement make sure that the little finger of your arm is higher than your thumb. This guarantees a good contraction. Hold the contracted position for a second as you squeeze the biceps.<br>
+					<br>
+					<b>Reps :</b> (8-15)<br>
+					<b>Sets :</b> 4<br><br>
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/40.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/41.jpg"  style="width:100%">
+				  </div>
+				   <div class="video-img">
+				  <img src="video img/bicep.png"  style="width:100%">
+				  </div>
+				  </div>
+			</div><hr>
+			<h3>Abs</h3>
+			<span style="color:red">Doing abs workout and squats burns a lot of calories, so be cautious.</span>
+				<div style="background-color: #fff; padding:10px;">
+				<h3>1. Hanging Leg Raises</h3>
+				<p>
+					<video class="video"  controls style="height:230px">
+						<source src="video\legraise.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: abs </b><br>
+					<ol>
+					<li> While holding onto a chin-up bar raising an overhand grip, hang with your knees bent slightly.</li>
+					
+					<li> Pull your hips up as you curl inward toward your chest using the muscles of your lower abs. Life your knees as close to your chest as possible, rounding your lower back at the top. Then, pause, feel the contraction in your lower-abdominal muscles, and return to the position you began with.</li>
+					</ol>
+					<b>Reps :</b> (10-15)<br>
+					<b>Sets :</b> 3<br><br>
+					
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/9.png"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/8.png"  style="width:100%">
+				  </div>
+				  </div>
+			</div>
+			<div style="background-color: #f2f2f2; padding:10px;">
+				<h3>2. Sit Ups</h3>
+				<p>
+					<video class="video"  controls  muted style="height:230px">
+						<source src="video\situp.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: abs </b><br>
+					<ol>
+					<li> Lie down on the floor placing your feet either under something that will not move or by having a partner hold them. Your legs should be bent at the knees.</li>
+					<li> Place your hands behind your head and lock them together by clasping your fingers. This is the starting position.</li>
+					<li> Elevate your upper body so that it creates an imaginary V-shape with your thighs. Breathe out when performing this part of the exercise.</li>
+					<li> Once you feel the contraction for a second, lower your upper body back down to the starting position while inhaling.</li>
+					</ol>
+					<b>Reps :</b> (15-20)<br>
+					<b>Sets :</b> 3<br><br>
+					
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/42.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/43.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/abs.jpg"  style="width:100%">
+				  </div>
+				  </div>
+			</div>
+			<div style="background-color: #fff; padding:10px;">
+				<h3>3. Cross-Body Crunch</h3>
+				<p>
+					<video class="video"  controls  muted style="height:230px">
+						<source src="video\crunch.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: abs </b><br>
+					<ol>
+					<li> Lie flat on your back and bend your knees about 60 degrees.</li>
+					<li> Keep your feet flat on the floor and place your hands loosely behind your head. This will be your starting position.</li>
+					<li> Now curl up and bring your right elbow and shoulder across your body while bring your left knee in toward your left shoulder at the same time. Reach with your elbow and try to touch your knee. Exhale as you perform this movement. </li>
+					<li> Now go back down to the starting position as you inhale and repeat with the left elbow and the right knee.</li>
+					</ol>
+					<b>Reps :</b> (15-20)both side<br>
+					<b>Sets :</b> 3<br><br>
+					
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/44.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/45.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/abs.jpg"  style="width:100%">
+				  </div>
+				  </div>
+			</div>
+			<div style="background-color: #f2f2f2; padding:10px;">
+				<h3>4. Plate Twist</h3>
+				<p>
+					<video class="video"  controls  muted style="height:230px">
+						<source src="video\1423.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: abs </b><br>
+					<ol>
+					<li> Lie down on the floor or an exercise mat with your legs fully extended and your upper body upright. Grab the plate by its sides with both hands out in front of your abdominals with your arms slightly bent.
+					</li>
+					<li> Slowly cross your legs near your ankles and lift them up off the ground. Your knees should also be bent slightly. Note: Move your upper body back slightly to help keep you balanced turning this exercise. This is the starting position.</li>
+					<li> Move the plate to the left side and touch the floor with it. Breathe out as you perform that movement.
+					 </li>
+					<li> Come back to the starting position as you breathe in and then repeat the movement but this time to the right side of the body. Tip: Use a slow controlled movement at all times. Jerking motions can injure the back.</li>
+					</ol>
+					<b>Reps :</b> (15-20)both side<br>
+					<b>Sets :</b> 3<br><br>
+					
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/46.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/47.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/48.jpg"  style="width:100%">
+				  </div>
+				  </div>
+			</div>
+			<div style="background-color: #fff; padding:10px;">
+				<h3>5. plank</h3>
+				<p>
+					<video class="video"  controls muted>
+						<source src="video\plank.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: abdominals, back & shoulders </b><br>
+					<ol>
+					<li> Being face down resting your weight on your forearms and toes and pull your abs in tight. </li>
+					
+					<li> Maintain a hold where your body is in a straight line from shoulders to heels for as long as possible.
+					</li>
+					</ol>
+					Tips: Keep a straight back and don't allow your hips to sag throughout the exercise hold. Try the 'RKC plank'. In this variation you don't just hold the position, you seriously squeeze your abs, glutes, quads, lats, etc.<br><br>
+					<b>Hold 1-2 minutes</b><br>
+					</p>
+				<div  class="clearfix" style="padding-top:30px;">
+				  <div class="video-img">
+				  <img src="video img/plank-man.png"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/plank-woman.png"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/8.jpg"  style="width:100%">
+				  </div>
+				  </div>
+			</div><hr>
+			<h3>Legs & Glute</h3>
+				<div style="background-color: #f2f2f2; padding:10px;">
+				<h3>1. Squats(feet position is wider)</h3>
+				<p>
+					<video class="video"  controls>
+						<source src="video\My ASICS Strength Exercises- Regular Squat.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: Hamstrings, Glute, Quadriceps</b><br>
+					<ol>
+					<li> Stand with your feet apart, directly under your hips, and place your hands on your hips.</li>
+					
+					<li> Standing up tall, put your shoulders back, lift your chest, and pull in your abdominal muscles.</li>
+					
+					<li> Bend your knees while keeping your upper body as straight as possible, as if you were lowering yourself onto a seat behind you. Lower yourself as far as you can without leaning your upper body more than a few inches forward.</li></ol>
+					<b>Reps :</b> (15-30)<br>
+					<b>Sets :</b> 3<br><br>
+					Tip: Don’t allow your knees to go too far forward. You don’t want them to stick out past your toes.
+					Straighten your legs. Being careful not to lock your knees when you reach a standing position, straighten your legs. Stretch your arms out in front of you for added balance during squats.
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/Screenshot (72).png"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/Screenshot (73).png"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/1.jpg"  style="width:100%">
+				  </div>
+				  </div>
+			</div>
+
+			<div style="background-color: #fff; padding:10px;">
+				<h3>2. Calf Raises</h3>
+				<p>
+					<video class="video"  controls>
+						<source src="video\How to Do Bodyweight Calf Raises.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: Calf </b><br>
+					<ol>
+					<li> Stand on the edge of a step(Like stairs).</li>
+					
+					<li> Stand tall with your abdominals pulled in, the balls of your feet firmly planted on the step, and your heels hanging over the edge. Rest your hands against a wall or a sturdy object for balance.</li>
+					
+					<li> Raise your heels a few inches above the edge of the step so that you’re on your tiptoes.</li>
+					<li>Hold the position for a moment, and then lower your heels below the platform, feeling a stretch in your calf muscles.</li></ol>
+					<b>Reps :</b> (15-30)<br>
+					<b>Sets :</b> 3<br><br>
+					Tip: Lift as high as you can onto your toes and lower your heels down as much as your ankle flexibility allows. Push evenly through the entire width of your foot. Don’t push off from your big toe or the outside edge of your feet.
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/2.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/3.jpg"  style="width:100%">
+				  </div>
+				  </div>
+			</div>
+			<div style="background-color: #f2f2f2; padding:10px;">
+				<h3>3. Dumbbell Lunges</h3>
+				<p>
+					<span style="color:red">Caution: This is a movement that requires a great deal of balance so if you suffer from balance problems you may wish to either avoid it or just use your own bodyweight while holding on to a fixed object. Definitely never perform with a barbell on your back if you suffer from balance issues.</span>
+					<br><br>
+					<video class="video"  controls>
+						<source src="video\53.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: Quadriceps </b><br>
+					<ol>
+					<li> Stand with your torso upright holding two dumbbells in your hands by your sides. This will be your starting position.</li>
+					
+					<li> Step forward with your right leg around 2 feet or so from the foot being left stationary behind and lower your upper body down, while keeping the torso upright and maintaining balance. Inhale as you go down. Note: As in the other exercises, do not allow your knee to go forward beyond your toes as you come down, as this will put undue stress on the knee joint. Make sure that you keep your front shin perpendicular to the ground.</li>
+					
+					<li> Using mainly the heel of your foot, push up and go back to the starting position as you exhale.</li>
+					<li>Hold the position for a moment, and then lower your heels below the platform, feeling a stretch in your calf muscles.</li></ol>
+					<b>Reps :</b> (10-15)<br>
+					<b>Sets :</b> 3<br><br>
+					
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/49.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/50.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/glute.png"  style="width:100%">
+				  </div>
+				  </div>
+			</div>
+			<div style="background-color: #fff; padding:10px;">
+				<h3>4. Front Bench Jump</h3>
+				<p>
+					<video class="video"  controls muted>
+						<source src="video\1424.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: Quadriceps </b><br>
+					<ol>
+					<li> Begin with a box or bench 1-2 feet in front of you. Stand with your feet shoulder width apart. This will be your starting position.</li>
+					
+					<li> Perform a short squat in preparation for the jump; swing your arms behind you.</li>
+					
+					<li> Rebound out of this position, extending through the hips, knees, and ankles to jump as high as possible. Swing your arms forward and up.</li>
+					<li> Jump over the bench, landing with the knees bent, absorbing the impact through the legs.</li>
+					<li> Turn around and face the opposite direction, then jump back over the bench.</li>
+				</ol>
+					<b>Reps :</b> (10-15)<br>
+					<b>Sets :</b> 3<br><br>
+					
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/51.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/52.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/glute.png"  style="width:100%">
+				  </div>
+				  </div>
+			</div>
+			<div style="background-color: #f2f2f2; padding:10px;">
+				<h3>5. Barbell Hip Thrust</h3>
+				<p>
+					<video class="video"  controls muted>
+						<source src="video\1425.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: Glutes </b><br>
+					<ol>
+					<li> Begin seated on the ground with a bench directly behind you. Have a loaded barbell over your legs. Using a fat bar or having a pad on the bar can greatly reduce the discomfort caused by this exercise.</li>
+					
+					<li> Roll the bar so that it is directly above your hips, and lean back against the bench so that your shoulder blades are near the top of it.</li>
+					
+					<li> Begin the movement by driving through your feet, extending your hips vertically through the bar. Your weight should be supported by your shoulder blades and your feet. Extend as far as possible, then reverse the motion to return to the starting position.</li>
+					
+				</ol>
+					<b>Reps :</b> (10-15)<br>
+					<b>Sets :</b> 3<br><br>
+					
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/53.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/54.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/glute.png"  style="width:100%">
+				  </div>
+				  </div>
+			</div>
+			<div style="background-color: #fff; padding:10px;">
+				<h3>6. Sumo Deadlift</h3>
+				<p>
+					<video class="video"  controls muted>
+						<source src="video\1426.mp4" type="video/mp4">
+						</video>
+					<b>Targeting Muscles: Hamstrings </b><br>
+					<ol>
+					<li> Begin with a bar loaded on the ground. Approach the bar so that the bar intersects the middle of the feet. The feet should be set very wide, near the collars. Bend at the hips to grip the bar. The arms should be directly below the shoulders, inside the legs, and you can use a pronated grip, a mixed grip, or hook grip. Relax the shoulders, which in effect lengthens your arms.</li>
+					
+					<li> Take a breath, and then lower your hips, looking forward with your head with your chest up. Drive through the floor, spreading your feet apart, with your weight on the back half of your feet. Extend through the hips and knees.</li>
+					
+					<li> As the bar passes through the knees, lean back and drive the hips into the bar, pulling your shoulder blades together.</li>
+					<li>Return the weight to the ground by bending at the hips and controlling the weight on the way down.</li>
+				</ol>
+					<b>Reps :</b> (10-15)<br>
+					<b>Sets :</b> 3<br><br>
+					
+					</p>
+				<div  class="clearfix">
+				  <div class="video-img">
+				  <img src="video img/55.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/56.jpg"  style="width:100%">
+				  </div>
+				  <div class="video-img">
+				  <img src="video img/glute.png"  style="width:100%">
+				  </div>
+				  </div>
+			</div><hr>
+			<div>
+				<h2> Progressive Overload:</h2>
+				<p>
+					<h3>What Is Progressive Overload?</h3>
+						<p>This principle involves continually increasing the demands on the musculoskeletal system to continually make gains in muscle size, strength, and endurance. Simply put, in order to get bigger and stronger, you must continually make your muscles work harder than they're used to. Most often, that means increasing the resistance, but as you'll find below, there are other methods to increasing the overload.</p>
+
+						<p>Conversely, if the demands on the target muscle groups are not at least maintained or are actually decreased, your muscles will atrophy, losing size and strength.</p>
+
+						<p>Progressive overload is a very simple but crucial concept, laying the foundation upon which successful resistance training is built.</p>
+
+						<p>The progressive-overload principle doesn't apply just to lifting weights to increase muscle growth and strength; it can also be applied to cardiovascular-fitness programs, creating physiological changes that affect aerobic metabolism and the cardiorespiratory system.</p>
+				</p>
+				<p>
+					<h3>Methods Of Increasing The Overload</h3>
+					1.  Increase The Resistance<br>
+					2. Increase The Reps<br>
+					3. Increase The Volume<br>
+					4. Increase Training Frequency<br>
+					5. Decrease Rest Time Between Sets<br>
+				</p>
+				<span style="font-size:18px; color: red"> In simple if you are taking 5kg dumbbell in both hands and doing 15 reps in the first set then in the next set increase the weight by (1 to 2.5)kg and do 8-10 reps.</span>
+			</div>
+		</div><!--training div-->
+	<div id="about" style=" padding: 10px; text-align:justify; font-size:18px;">
+		<p style="font-size:38px; padding-top:30px; text-align:center">About</p>
+		<!--here-->
+		<div class="clearfix">
+		<div class="card about">
+			<center>
+		  <a href="#1" onclick="myFunction()"><img src="https://scontent-bom1-2.xx.fbcdn.net/v/t1.0-9/28280143_812197418977177_2556270864973668299_n.jpg?_nc_cat=101&_nc_oc=AQnl3XxPTn_FnpvC9oqFarAwOqSaq7Bivt-STIa5Hmw4QyBclEuMRB5M-hJPZH22eQk&_nc_ht=scontent-bom1-2.xx&oh=713a37e921bcea7950df28955fe19092&oe=5DE59F54" class="profile" style="width:50%; height:50%; border-radius:50%; padding-top:10px;"></center>
+		  <div class="write">
+		    <h4><b>Subhadip Dutta</b></h4> 
+		    <p>Web Designer</p> </a>
+		  </div>
+		</div>
+		<div class="card about">
+		  <a href="#2"><img src="contact.jpg"  style="width:100%">
+		  <div class="write">
+		    <h4><b>Contact Me</b></h4> 
+		   <p><span style='font-size:50px;'>&#9742; &#9993; &#64; <i class="fa fa-facebook-official" style="font-size:50px"></i></span> </p></a>
+		  </div>
+		</div>
+		<div class="card about">
+		 <a href="#3"> <img src="web.jpg"  style="width:100%">
+		  <div class="write">
+		    <h4><b>My Work</b></h4> 
+		    <p>Website Designs</p> </a>
+		  </div>
+		</div>
+	</div>
+<!--from here-->
+	
+  <div id="1" class="clearfix">
+  	<img  class="me" src="subha.jpeg">
+  	<div class="aboutdiv">
+  		<p  id="demo" style="padding:10px;"></p>
+  		<p  style="padding:10px; padding-top:15px;  font-size: 20px; ">
+  			<span style="color:#ff3300; font-size:24px">M</span>y name is <b>Subhadip Dutta</b>. I am the creator of this website. This website contains everything that you need to know before you hit the gym or start working out in home. There are several features like BMR calculator, length converter, weight converter, step by step guidance about diet and workout. I also included a 3000 up calories/day diet in budget. I also made sure that you became complete aware about every muscels of your body and a workout plan for beginners and intermediates. This website is completely responsive for all kind of devices, though I am not sure if it supports all browser(use google chrome.)
+  		</p>
+  		<p style="padding:10px; font-size: 20px; ">
+  			This is my 4th project. This is the first project where I implemented javascript completely on my own. Though I studied javascript only a little bit. If you like this website please kindly inform me, it will incourage me in my work.<span style="color:#ff3300; font-size:24px"> Thank you.</span>
+  		</p>
+  		</div>
+ </div>
+ <div id="2" style="padding: 10px; background-color:#0066cc; color:#fff; height:620px; padding-top:60px;">
+ 	<h2>Contact Info</h2>
+ 	<hr>
+ 	<p id="ma2"style="padding:40px; line-height: 200%;">
+ 	<span style="font-size:24px">&#9743; Phone no:</span> 6290044365<br>
+ 	<span style="font-size:24px;"><i class="fa fa-whatsapp" style="font-size:24px"></i> Whatsapp no:</span> 6290044365<br>
+ 	<span style="font-size:24px;">&#64; Email Id:</span> subhadipdutta180@gmail.com<br>
+ 	<span style="font-size:24px;"><i class="fa fa-facebook-official" style="font-size:24px"></i> Facebook Id:</span><a href="https://www.facebook.com/subhadip.subha.33" title="Go to my facebook profile" target="_blank" style="color:#fff;"> subhadip.subha.33</a>
+ 	</p>
+ 	<p id="ma" style="padding:10px; line-height: 200%; font-size:3vw">
+ 	&#9743; Phone no:</span> 6290044365<br>
+ 	<i class="fa fa-whatsapp" style="font-size:3vw"></i> Whatsapp no:</span> 6290044365<br>
+ 	&#64; Email-Id:</span> subhadipdutta180@gmail.com<br>
+ 	<i class="fa fa-facebook-official" style="font-size:24px"></i> Facebook-Id:</span>
+ 	<a href="https://www.facebook.com/subhadip.subha.33" title="Go to my facebook profile" target="_blank" style="color:#fff;"> subhadip.subha.33</a>
+ 	</p>
+ </div>
+	<div id="3" style="padding-top:50px; background-color:#f96714; height:auto">
+		<p  style="text-align:center; font-size: 40px; color:#fff; font-family:sans-serif">My Work<br><br>
+			<span style="font-size: 25px; color:#111">What I have done so far</span></p>
+		<div  class="clearfix" >
+		<div class="card1 about">
+			
+		  <a href="https://subhadip313.github.io/Happy-Journey1998/" target="_blank" ><img src="Screenshot (41).png" class="profile" style="width:100%;">
+		  <div class="write">
+		    <h4><b><span style="font-size:30px;">&#10112;</span> Happy Journey</b></h4> 
+		    <p>A school project(class 12)<br>Simple table based design, not responisve for modile or tablet</p> </a>
+		  </div>
+		</div>
+		<div class="card1 about">
+		  <a href="https://subhadip-dutta.000webhostapp.com/" target="_blank"><img src="Screenshot (42).png"  style="width:100%">
+		  <div class="write">
+		    <h4><b><span style="font-size:30px;">&#10113;</span> Tribute to Iron Man</b></h4> 
+		   <p> Simple design using Html and CSS and JS, only responsive for pc/laptop</p></a>
+		  </div>
+		</div>
+		<div class="card1 about">
+		 <a href="http://thearsenalofindianarmy.ga/" target="_blank"> <img src="Screenshot (43).png"  style="width:100%">
+		  <div class="write">
+		    <h4><b><span style="font-size:30px;">&#10114;</span> The Arsenal of Indian Armed Forces</b></h4> 
+		    <p>Upgraded than the previous one, fully resonsive for mobile devices, night mode, modal images features, easiest navigation. </p> </a>
+		  </div>
+		</div>
+	</div>
+</div>	
+<div id="for" style="border:2px solid #ccc; ">
+	<div class="write">
+		<h4><b><span style="font-size:30px;">&#10112;</span> Happy Journey</b></h4> 
+		    <p>A school project(class 12)<br>Simple table based design, not responisve for modile or tablet. (click on the image to visit the site)</p> 
+			<a href="https://subhadip313.github.io/Happy-Journey1998/" target="_blank" ><img src="Screenshot (41).png" class="profile" style="width:100%;">
+		    </a>
+		  </div>
+		  <div class="write">
+		<h4><b><span style="font-size:30px;">&#10113;</span> Tribute to Iron Man</b></h4> 
+		   <p> Simple design using Html and CSS and JS, only responsive for pc/laptop. (click on the image to visit the site)</p>
+			 <a href="https://subhadip-dutta.000webhostapp.com/" target="_blank"><img src="Screenshot (42).png"  style="width:100%">
+		    </a>
+		  </div>
+		  <div class="write">
+		<h4><b><span style="font-size:30px;">&#10114;</span> The Arsenal of Indian Armed Forces</b></h4> 
+		    <p>Upgraded than the previous one, fully resonsive for all devices, night mode, modal images features, easiest navigation. (click on the image to visit the site)</p>
+			<a href="http://thearsenalofindianarmy.ga/" target="_blank"> <img src="Screenshot (43).png"  style="width:100%">
+		    </a>
+		  </div>
+	</div>
+</div><!--about div-->
+
+<div id="extra" class="clearfix" style=" padding: 10px; text-align: justify; font-size: 18px; border-left:8px solid  #4da6ff; overflow:auto;">
+	<p style="font-size:38px; padding-top:30px; text-align:center; color: #4da6ff">Gallery<br>
+		<span style="font-size:18px;color:#111">Some images of the website that I have created before</span></p>
+	<div style="padding-top:15px;">
+	<div class="gallery">
+		<a href="Screenshot (50).png" target="_blank">
+	<img src="Screenshot (50).png" width="100%"></a>
+	</div>
+	<div class="gallery">
+		<a href="Screenshot (52).png" target="_blank">
+	<img src="Screenshot (52).png" width="100%"></a>
+	</div>
+	<div class="gallery">
+		<a href="Screenshot (53).png" target="_blank">
+	<img src="Screenshot (53).png" width="100%"></a>
+	</div>
+	<div class="gallery">
+		<a href="Screenshot (54).png" target="_blank">
+	<img src="Screenshot (54).png" width="100%"></a>
+	</div>
+	<div class="gallery">
+		<a href="Screenshot (58).png" target="_blank">
+	<img src="Screenshot (58).png" width="100%"></a>
+	</div>
+	<div class="gallery">
+		<a href="Screenshot (59).png" target="_blank">
+	<img src="Screenshot (59).png" width="100%"></a>
+	</div>
+	<div class="gallery">
+		<a href="Screenshot (60).png" target="_blank">
+	<img src="Screenshot (60).png" width="100%"></a>
+	</div>
+	<div class="gallery">
+		<a href="Screenshot (61).png" target="_blank">
+	<img src="Screenshot (61).png" width="100%"></a>
+	</div>
+	<div class="gallery">
+		<a href="Screenshot (62).png" target="_blank">
+	<img src="Screenshot (62).png" width="100%"></a>
+	</div>
+	<div class="gallery">
+		<a href="Screenshot (63).png" target="_blank">
+	<img src="Screenshot (63).png" width="100%"></a>
+	</div>
+	<div class="gallery">
+		<a href="Screenshot (64).png" target="_blank">
+	<img src="Screenshot (64).png" width="100%"></a>
+	</div>
+	<div class="gallery">
+		<a href="Screenshot (65).png" target="_blank">
+	<img src="Screenshot (65).png" width="100%"></a>
+	</div>
+</div>
+</div><!--gallery div-->
+</body>
+</html>
