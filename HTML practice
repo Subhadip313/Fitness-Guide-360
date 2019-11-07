@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Audi@Dream_car</title>
+<style>
+body {
+	margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.box img{
+	height:250px;
+    width:100%;
+    border-radius: 20px;
+    border: 2px solid #111;
+    
+}
+.box img:hover{
+	opacity:0.5;
+     box-shadow: 0 14px 20px 0 rgba(0, 0, 0, 0.2), 0 24px 50px 0 rgba(0, 0, 0, 0.19);
+    
+}
+#chg1:hover{
+	font-size:30px;
+    color:#cc33ff;
+}
+#chg2:hover{
+	font-size:30px;
+    color:#ff3300;
+}
+#chg3:hover{
+	font-size:30px;
+    color:#009900;
+}
+
+a{
+	text-decoration:none;
+    color:#111;
+}
+.navbar{
+	 background-color: #111;
+     overflow: hidden;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      position: sticky;
+      top: 0;
+      z-index:99;
+}
+.navbar a{
+	float: left;
+	padding: 12px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-size: 17px;
+  
+}
+.navbar a:hover{
+background-color:#f1f1f1;
+color:#111;
+}
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+.box{
+	height:400px;
+    width:33.33%;
+    float: left;
+}
+.clearfix {
+  content: "";
+  clear: both;
+  display: table;
+}
+.gallery_img{
+	float:left;
+    width:33.33%;
+    padding:10px;
+}
+.gallery_img img{
+	height:260px;
+    width:100%;
+    border-radius:12px;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.gallery_img img:hover{
+	opacity:0.5;
+}
+</style>
+</head>
+<body>
+<div id="up">
+<img src="https://wallpapercave.com/wp/wp1831049.png" style="height:300px; width:100%; position:relative; ">
+	<span style="position:absolute; top:200px; left:20px; color:#fff; font-size:4vw;">The Beauty & The Beast </span>
+    </div>
+<div class="navbar">
+<a href="#up">Home</a>
+<a href="#gallery">Gallery</a>
+<a href="#cd">Car Description</a>
+<a style="float:right" href="#about">About</a>
+</div>
+<!-- Slideshow container -->
+<div class="slideshow-container">
+<!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+    <img src="https://hdqwalls.com/wallpapers/audi-pic.jpg" style="width:100%">
+  </div>
+<div class="mySlides fade">
+   <img src="https://wallpaperaccess.com/full/26900.jpg" style="width:100%">
+ </div>
+<div class="mySlides fade">
+    <img src="https://wallpaperaccess.com/full/26227.jpg" style="width:100%">
+</div>
+<div class="mySlides fade">
+    <img src="http://www.hdcarwallpapers.com/walls/2017_audi_r8_spyder_v10-wide.jpg" style="width:100%">
+</div>
+<div class="mySlides fade">
+    <img src="https://i.ytimg.com/vi/skegIUrAcAU/maxresdefault.jpg" style="width:100%">
+</div>
+</div>
+<!--For the link section-->
+<div class="clearfix">
+	<div class="box">
+   <center>
+   <div style="padding:50px;">
+   		  <a href="#gallery">
+          <img src="https://wonderfulengineering.com/wp-content/uploads/2013/11/Audi-wallpaper-0.jpg">
+          <br>
+          <br>
+     <span id="chg1"> Gallery</span></a>
+        </div>
+   </center>
+    </div>
+    <div class="box">
+	<center>
+   <div style="padding:50px;">
+   		  <a href="#cd">
+          <img src=" http://merchant-community.shopclues.com/wp-content/uploads/2017/12/product-descriptions.jpg">
+          <br>
+          <br>
+      <span id="chg2">Car Description</span></a>
+        </div>
+   </center>
+    </div>
+    <div class="box">
+    <center>
+   <div style="padding:50px;">
+   		  <a href="#about">
+          <img src=" https://resetcan.org/wp-content/uploads/2018/03/about-us.jpg">
+          <br>
+          <br>
+     <span id="chg3">About Us</span></a>
+        </div>
+   </center>
+    </div>
+</div>
+<!--Gallery Part-->
+<div id="gallery" class="clearfix" style=" background-color:#333">
+<section style="text-align:center;padding-top:60px;font-size:30px; color:#fff">Gallery</section>
+<div class="gallery_img">
+<img src="https://wallpaperaccess.com/full/26900.jpg">
+</div>
+<div class="gallery_img">
+<img src="https://wallpaperaccess.com/full/26227.jpg">
+</div>
+<div class="gallery_img">
+<img src="http://www.hdcarwallpapers.com/walls/2017_audi_r8_spyder_v10-wide.jpg">
+</div>
+<div class="gallery_img">
+<img src="https://s1.cdn.autoevolution.com/images/news/2016-audi-a6-and-a7-tfsi-quattro-models-look-handsome-in-latest-us-spec-photo-gallery-97463_1.jpg">
+</div>
+<div class="gallery_img">
+<img src="https://stimg.cardekho.com/images/wallpaper/1280_800/Audi/A4/audi_1.jpg">
+</div>
+<div class="gallery_img">
+<img src="http://thewowstyle.com/wp-content/uploads/2015/02/Audi-car-wallpaper-1.jpg">
+</div>
+</div>
+<!--About us Part-->
+<div id="about">
+<h2 style="padding-top:60px; color:#ff3300">Will update soon!</h2>
+<img src="https://probakebym.com/wp-content/uploads/2019/03/coming-soon-sale-poster-vector-1666502-e1553387667518.jpg" style="height:500px; width:100%;">
+</div>
+<script>
+// Automatic Slideshow - change image every 4 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 4000);    
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// When the user clicks anywhere outside of the modal, close it
+var modal = document.getElementById('ticketModal');
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+</script>
+
+</body>
+</html>
